@@ -30,10 +30,11 @@
             </div>
             <!-- Desktop nav -->
             <ul class="nav-links">
-                <li><a href="#home"     class="active" id="nav-home">HOME</a></li>
-                <li><a href="#about"    id="nav-about">ABOUT ME</a></li>
-                <li><a href="#projects" id="nav-projects">PROJECTS</a></li>
-                <li><a href="#contact"  id="nav-contact">CONTACT</a></li>
+                <li><a href="#home"       class="active" id="nav-home">HOME</a></li>
+                <li><a href="#about"      id="nav-about">ABOUT ME</a></li>
+                <li><a href="#experience" id="nav-experience">EXPERIENCE</a></li>
+                <li><a href="#projects"   id="nav-projects">PROJECTS</a></li>
+                <li><a href="#contact"    id="nav-contact">CONTACT</a></li>
             </ul>
             <!-- Hamburger (mobile only) -->
             <button class="hamburger" id="hamburger" aria-label="Toggle navigation" aria-expanded="false">
@@ -42,10 +43,11 @@
         </nav>
         <!-- Mobile nav overlay -->
         <div class="mobile-nav" id="mobile-nav">
-            <a href="#home"     class="active" id="mnav-home">HOME</a>
-            <a href="#about"    id="mnav-about">ABOUT ME</a>
-            <a href="#projects" id="mnav-projects">PROJECTS</a>
-            <a href="#contact"  id="mnav-contact">CONTACT</a>
+            <a href="#home"       class="active" id="mnav-home">HOME</a>
+            <a href="#about"      id="mnav-about">ABOUT ME</a>
+            <a href="#experience" id="mnav-experience">EXPERIENCE</a>
+            <a href="#projects"   id="mnav-projects">PROJECTS</a>
+            <a href="#contact"    id="mnav-contact">CONTACT</a>
         </div>
     </header>
 
@@ -102,8 +104,9 @@
             <div class="skill-card">
                 <h3><span class="icon">💻</span> Languages &amp; Tools</h3>
                 <ul>
-                    <li>Python</li><li>Java</li><li>C</li>
-                    <li>JavaScript</li><li>HTML / CSS</li><li>SQL</li>
+                    <li>Java</li><li>Python</li><li>JavaScript</li>
+                    <li>SQL</li><li>PL/SQL</li>
+                    <li>Git</li><li>Linux</li><li>Postman</li>
                 </ul>
             </div>
             <div class="skill-card">
@@ -115,24 +118,54 @@
                 </ul>
             </div>
             <div class="skill-card">
-                <h3><span class="icon">🌐</span> Full Stack</h3>
+                <h3><span class="icon">🌐</span> Frameworks &amp; Databases</h3>
                 <ul>
-                    <li>Next.js</li><li>React</li><li>TypeScript</li>
-                    <li>Tailwind CSS</li><li>Supabase</li><li>Prisma</li><li>PostgreSQL</li>
+                    <li>Java Spring Boot</li><li>Node.js</li><li>Express.js</li>
+                    <li>MySQL</li><li>MongoDB</li><li>n8n Automation</li>
                 </ul>
             </div>
             <div class="skill-card">
-                <h3><span class="icon">📡</span> Embedded &amp; Research</h3>
+                <h3><span class="icon">📡</span> Embedded &amp; Radar</h3>
                 <ul>
-                    <li>TI IWR6843AOP</li><li>AWR1843BOOST</li>
-                    <li>LVDS / ADC data capture</li><li>Python I/Q parsing</li><li>PyQt5</li>
+                    <li>TI mmWave Radar</li><li>UART Communication</li>
+                    <li>Firmware Flashing</li><li>TLV Frame Parsing (C/Python)</li>
+                    <li>Radar Data Acquisition</li>
                 </ul>
             </div>
         </div>
     </section>
 
     <!-- ===================================================
-         SECTION 3 — PROJECTS
+         SECTION 3 — EXPERIENCE
+    =================================================== -->
+    <section id="experience">
+        <h2 class="section-title">Work <span>Experience</span></h2>
+        <p class="section-subtitle">Where I've applied my skills in the real world</p>
+
+        <div class="experience-list">
+            <div class="exp-card">
+                <div class="exp-header">
+                    <div class="exp-left">
+                        <h3 class="exp-role">MMWave Radar Intern</h3>
+                        <p class="exp-company">Mistral Solutions Pvt. Ltd.</p>
+                    </div>
+                    <span class="exp-date">Jun 2025 — Present</span>
+                </div>
+                <ul class="exp-points">
+                    <li>Worked with TI mmWave radar platforms to configure firmware, acquire sensor data, and validate radar system functionality.</li>
+                    <li>Developed Python-based utilities for parsing and processing TLV radar frames into structured data for radar data analysis.</li>
+                    <li>Contributed to the development of a radar-based industrial safety monitoring solution (Vigil Sense) for real-time human detection and workplace awareness.</li>
+                </ul>
+                <div class="exp-tags">
+                    <span>TI mmWave</span><span>Python</span><span>TLV Parsing</span>
+                    <span>Firmware</span><span>UART</span><span>Radar Data Acquisition</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===================================================
+         SECTION 4 — PROJECTS
     =================================================== -->
     <section id="projects">
         <h2 class="section-title">My <span>Projects</span></h2>
@@ -262,7 +295,7 @@
     <!-- ===== JAVASCRIPT ===== -->
     <script>
         /* ---------- Active nav on scroll ---------- */
-        const sections  = ['home', 'about', 'projects', 'contact'];
+        const sections  = ['home', 'about', 'experience', 'projects', 'contact'];
         const navLinks  = {};
         const mNavLinks = {};
         sections.forEach(id => {
