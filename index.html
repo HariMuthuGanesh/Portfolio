@@ -5,26 +5,48 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="Portfolio of Hari Muthu Ganesh R — CSE student specializing in Cybersecurity and Full Stack Development.">
+
+    <!-- Open Graph -->
+    <meta property="og:title" content="Hari Muthu Ganesh R — Portfolio">
+    <meta property="og:description" content="Security Engineer & Full Stack Developer | NEC Kovilpatti">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://HariMuthuGanesh.github.io/Portfolio">
+
     <title>Hari Muthu Ganesh R — Portfolio</title>
     <link rel="icon" href="assets/logo1.png" type="image/png">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="css/style.css">
 </head>
 
 <body>
 
-    <!-- ===== STICKY NAVBAR ===== -->
+    <!-- ===== NAVBAR ===== -->
     <header>
         <nav class="navbar" id="navbar">
             <div class="logo">
-                <a href="#home"><img src="assets/logo1.png" alt="Hari's Logo"></a>
+                <a href="#home"><img src="assets/logo1.png" alt="Hari's Logo" width="52" height="52"></a>
             </div>
+            <!-- Desktop nav -->
             <ul class="nav-links">
-                <li><a href="#home" class="active" id="nav-home">HOME</a></li>
-                <li><a href="#about" id="nav-about">ABOUT ME</a></li>
+                <li><a href="#home"     class="active" id="nav-home">HOME</a></li>
+                <li><a href="#about"    id="nav-about">ABOUT ME</a></li>
                 <li><a href="#projects" id="nav-projects">PROJECTS</a></li>
-                <li><a href="#contact" id="nav-contact">CONTACT</a></li>
+                <li><a href="#contact"  id="nav-contact">CONTACT</a></li>
             </ul>
+            <!-- Hamburger (mobile only) -->
+            <button class="hamburger" id="hamburger" aria-label="Toggle navigation" aria-expanded="false">
+                <span></span><span></span><span></span>
+            </button>
         </nav>
+        <!-- Mobile nav overlay -->
+        <div class="mobile-nav" id="mobile-nav">
+            <a href="#home"     class="active" id="mnav-home">HOME</a>
+            <a href="#about"    id="mnav-about">ABOUT ME</a>
+            <a href="#projects" id="mnav-projects">PROJECTS</a>
+            <a href="#contact"  id="mnav-contact">CONTACT</a>
+        </div>
     </header>
 
     <!-- ===================================================
@@ -41,8 +63,6 @@
             </p>
             <a href="#projects" class="btn-primary">See My Projects ↓</a>
         </div>
-
-
     </section>
 
     <!-- ===================================================
@@ -53,9 +73,8 @@
         <p class="section-subtitle">A little about who I am and what I do</p>
 
         <div class="about-wrapper">
-            <!-- Photo + badges column -->
             <div class="about-photo-col">
-                <img src="assets/hari_portrait.png" alt="Hari Muthu Ganesh R profile photo">
+                <img src="assets/hari_portrait.png" alt="Hari Muthu Ganesh R" width="200" height="248" loading="lazy">
                 <div class="about-badges">
                     <div class="badge">🎓 NEC Kovilpatti — CSE (3rd Year)</div>
                     <div class="badge">⭐ CGPA: 8.71</div>
@@ -64,7 +83,6 @@
                 </div>
             </div>
 
-            <!-- Text column -->
             <div class="about-text-col">
                 <h2>Who am I?</h2>
                 <ul>
@@ -77,52 +95,34 @@
             </div>
         </div>
 
-        <!-- Skills grid -->
         <div class="skills-grid">
             <div class="skill-card">
                 <h3><span class="icon">💻</span> Languages &amp; Tools</h3>
                 <ul>
-                    <li>Python</li>
-                    <li>Java</li>
-                    <li>C</li>
-                    <li>JavaScript</li>
-                    <li>HTML / CSS</li>
-                    <li>SQL</li>
+                    <li>Python</li><li>Java</li><li>C</li>
+                    <li>JavaScript</li><li>HTML / CSS</li><li>SQL</li>
                 </ul>
             </div>
-
             <div class="skill-card">
                 <h3><span class="icon">🛡️</span> Cybersecurity</h3>
                 <ul>
-                    <li>CTF (HackTheBox, TryHackMe)</li>
-                    <li>OSINT</li>
-                    <li>Penetration Testing</li>
-                    <li>Network Security</li>
+                    <li>CTF (HackTheBox, TryHackMe)</li><li>OSINT</li>
+                    <li>Penetration Testing</li><li>Network Security</li>
                     <li>Prodigy Infotech Internship</li>
                 </ul>
             </div>
-
             <div class="skill-card">
                 <h3><span class="icon">🌐</span> Full Stack</h3>
                 <ul>
-                    <li>Next.js</li>
-                    <li>React</li>
-                    <li>TypeScript</li>
-                    <li>Tailwind CSS</li>
-                    <li>Supabase</li>
-                    <li>Prisma</li>
-                    <li>PostgreSQL</li>
+                    <li>Next.js</li><li>React</li><li>TypeScript</li>
+                    <li>Tailwind CSS</li><li>Supabase</li><li>Prisma</li><li>PostgreSQL</li>
                 </ul>
             </div>
-
             <div class="skill-card">
                 <h3><span class="icon">📡</span> Embedded &amp; Research</h3>
                 <ul>
-                    <li>TI IWR6843AOP</li>
-                    <li>AWR1843BOOST</li>
-                    <li>LVDS / ADC data capture</li>
-                    <li>Python I/Q parsing</li>
-                    <li>PyQt5</li>
+                    <li>TI IWR6843AOP</li><li>AWR1843BOOST</li>
+                    <li>LVDS / ADC data capture</li><li>Python I/Q parsing</li><li>PyQt5</li>
                 </ul>
             </div>
         </div>
@@ -137,102 +137,59 @@
 
         <div class="projects-grid">
 
-            <!-- Card 1 — Most recent & most impressive -->
             <div class="project-card">
                 <span class="proj-tag">PyQt5 · mmWave Radar · Embedded</span>
                 <h3>VIGIL SENSE</h3>
-                <p class="proj-desc">
-                    PyQt5 application powered by TI IWR6843AOP mmWave radar for industrial safety monitoring.
-                    Features real-time people tracking, fall detection, and restricted zone breach alerts.
-                </p>
-                <a class="proj-link" target="_blank" href="https://github.com/HariMuthuGanesh/Vigle_Sense">
-                    ↗ View on GitHub
-                </a>
+                <p class="proj-desc">PyQt5 application powered by TI IWR6843AOP mmWave radar for industrial safety monitoring. Features real-time people tracking, fall detection, and restricted zone breach alerts.</p>
+                <a class="proj-link" target="_blank" rel="noopener" href="https://github.com/HariMuthuGanesh/Vigle_Sense">↗ View on GitHub</a>
             </div>
 
-            <!-- Card 2 — Deployed live product with real users -->
             <div class="project-card">
                 <span class="proj-tag">n8n · Supabase · Telegram Bot</span>
                 <h3>PaperHub</h3>
-                <p class="proj-desc">
-                    An n8n automation bot deployed on Hugging Face Spaces with Supabase PostgreSQL.
-                    The Telegram bot <strong>@nec_ques_bot</strong> lets NEC students retrieve question papers
-                    by department, subject code, and year.
-                </p>
+                <p class="proj-desc">An n8n automation bot deployed on Hugging Face Spaces with Supabase PostgreSQL. The Telegram bot <strong>@nec_ques_bot</strong> lets NEC students retrieve question papers by department, subject code, and year.</p>
                 <span class="proj-link-disabled">🔒 Internal Tool</span>
             </div>
 
-            <!-- Card 3 — Full-stack academic capstone -->
             <div class="project-card">
                 <span class="proj-tag">Spring Boot · JWT · MySQL · HTML/JS</span>
                 <h3>Club Management System</h3>
-                <p class="proj-desc">
-                    Full-stack web app built as an academic EL project for NEC — Spring Boot backend with
-                    JWT authentication, MySQL database, and a plain HTML/JS frontend.
-                </p>
+                <p class="proj-desc">Full-stack web app built as an academic EL project for NEC — Spring Boot backend with JWT authentication, MySQL database, and a plain HTML/JS frontend.</p>
                 <span class="proj-link-disabled">🔒 Academic Project</span>
             </div>
 
-            <!-- Card 4 -->
             <div class="project-card">
                 <span class="proj-tag">Python · Tkinter · Security</span>
                 <h3>Caesar Cipher</h3>
-                <p class="proj-desc">
-                    A simple Caesar Cipher tool built with Python and Tkinter for encrypting and decrypting
-                    text using a shift key. Features an intuitive GUI for easy input and result viewing.
-                </p>
-                <a class="proj-link" target="_blank" href="https://github.com/HariMuthuGanesh/Caesar_Cipher">
-                    ↗ View on GitHub
-                </a>
+                <p class="proj-desc">A Caesar Cipher tool built with Python and Tkinter for encrypting and decrypting text using a shift key. Features an intuitive GUI for easy input and result viewing.</p>
+                <a class="proj-link" target="_blank" rel="noopener" href="https://github.com/HariMuthuGanesh/Caesar_Cipher">↗ View on GitHub</a>
             </div>
 
-            <!-- Card 5 -->
             <div class="project-card">
                 <span class="proj-tag">Python · Tkinter · Crypto</span>
                 <h3>Image Encryption &amp; Decryption</h3>
-                <p class="proj-desc">
-                    A Python + Tkinter tool that lets users securely encrypt and decrypt JPEG/PNG images
-                    using a custom key, with an easy-to-use GUI for quick interaction.
-                </p>
-                <a class="proj-link" target="_blank" href="https://github.com/HariMuthuGanesh/Image_Encrypt_Decrypt">
-                    ↗ View on GitHub
-                </a>
+                <p class="proj-desc">A Python + Tkinter tool that lets users securely encrypt and decrypt JPEG/PNG images using a custom key, with an easy-to-use GUI for quick interaction.</p>
+                <a class="proj-link" target="_blank" rel="noopener" href="https://github.com/HariMuthuGanesh/Image_Encrypt_Decrypt">↗ View on GitHub</a>
             </div>
 
-            <!-- Card 6 -->
             <div class="project-card">
                 <span class="proj-tag">Python · Tkinter · Security</span>
                 <h3>Password Complexity Analyser</h3>
-                <p class="proj-desc">
-                    Evaluates password strength based on length, character variety, and common patterns,
-                    providing users with feedback to create more secure passwords.
-                </p>
-                <a class="proj-link" target="_blank" href="https://github.com/HariMuthuGanesh/Password_Analyser">
-                    ↗ View on GitHub
-                </a>
+                <p class="proj-desc">Evaluates password strength based on length, character variety, and common patterns, providing users with feedback to create more secure passwords.</p>
+                <a class="proj-link" target="_blank" rel="noopener" href="https://github.com/HariMuthuGanesh/Password_Analyser">↗ View on GitHub</a>
             </div>
 
-            <!-- Card 7 -->
             <div class="project-card">
                 <span class="proj-tag">Python · Pynput · Tkinter</span>
                 <h3>Keylogger</h3>
-                <p class="proj-desc">
-                    A Python GUI-based Keylogger using Tkinter and Pynput that records keystrokes in real
-                    time and saves them to a log file, with Start/Stop controls.
-                </p>
-                <a class="proj-link" target="_blank" href="https://github.com/HariMuthuGanesh/Keylogger">
-                    ↗ View on GitHub
-                </a>
+                <p class="proj-desc">A Python GUI-based Keylogger using Tkinter and Pynput that records keystrokes in real time and saves them to a log file, with Start/Stop controls.</p>
+                <a class="proj-link" target="_blank" rel="noopener" href="https://github.com/HariMuthuGanesh/Keylogger">↗ View on GitHub</a>
             </div>
 
-            <!-- Card 8 — Freelance (always last) -->
             <div class="project-card">
                 <span class="proj-tag">Next.js · TypeScript · Tailwind · Supabase</span>
                 <h3>Parvathi Jewellery <em style="font-size:11px;font-weight:400;color:#aaa;">(Freelance)</em></h3>
-                <p class="proj-desc">
-                    E-commerce site for a jewellery client built with Next.js, TypeScript, Tailwind CSS,
-                    Prisma, and Supabase. Includes product catalogue, cart, and admin dashboard.
-                </p>
+                <p class="proj-desc">E-commerce site for a jewellery client built with Next.js, TypeScript, Tailwind CSS, Prisma, and Supabase. Includes product catalogue, cart, and admin dashboard.</p>
                 <span class="proj-link-disabled">🔒 Client Project</span>
             </div>
 
@@ -247,56 +204,41 @@
         <p class="section-subtitle">Feel free to reach out for collaborations, opportunities, or just to say hi.</p>
 
         <div class="contact-wrapper">
-
-            <!-- CTA Buttons -->
             <div class="contact-cta">
-                <p>
-                    I'm always open to discussing new projects, creative ideas, or opportunities to
-                    be part of something amazing. Drop me a message or connect on social media.
-                </p>
+                <p>I'm always open to discussing new projects, creative ideas, or opportunities to be part of something amazing. Drop me a message or connect on social media.</p>
                 <div class="cta-buttons">
                     <a href="mailto:hariganesh260@gmail.com" class="cta-btn email">
-                        <span class="cta-icon">✉️</span>
-                        <span>hariganesh260@gmail.com</span>
+                        <span class="cta-icon">✉️</span>hariganesh260@gmail.com
                     </a>
-                    <a href="https://www.linkedin.com/in/hari-muthu-ganesh-r-147662321" target="_blank" class="cta-btn linkedin">
-                        <span class="cta-icon">🔗</span>
-                        <span>LinkedIn — Hari Muthu Ganesh R</span>
+                    <a href="https://www.linkedin.com/in/hari-muthu-ganesh-r-147662321" target="_blank" rel="noopener" class="cta-btn linkedin">
+                        <span class="cta-icon">🔗</span>LinkedIn — Hari Muthu Ganesh R
                     </a>
-                    <a href="https://github.com/HariMuthuGanesh" target="_blank" class="cta-btn github">
-                        <span class="cta-icon">🐙</span>
-                        <span>GitHub — HariMuthuGanesh</span>
+                    <a href="https://github.com/HariMuthuGanesh" target="_blank" rel="noopener" class="cta-btn github">
+                        <span class="cta-icon">🐙</span>GitHub — HariMuthuGanesh
                     </a>
                 </div>
             </div>
 
-            <!-- Contact Form -->
             <form class="contact-form" action="https://formsubmit.co/hariganesh260@gmail.com" method="POST">
                 <h3>Send a Message</h3>
-
-                <!-- FormSubmit hidden config -->
                 <input type="hidden" name="_subject" value="New message from Portfolio">
                 <input type="hidden" name="_captcha" value="false">
-                <input type="hidden" name="_next" value="https://HariMuthuGanesh.github.io">
+                <input type="hidden" name="_next" value="https://HariMuthuGanesh.github.io/Portfolio">
 
                 <div class="form-group">
                     <label for="name">Your Name</label>
-                    <input type="text" id="name" name="name" placeholder="John Doe" required>
+                    <input type="text" id="name" name="name" placeholder="John Doe" required autocomplete="name">
                 </div>
-
                 <div class="form-group">
                     <label for="email">Email Address</label>
-                    <input type="email" id="email" name="email" placeholder="john@example.com" required>
+                    <input type="email" id="email" name="email" placeholder="john@example.com" required autocomplete="email">
                 </div>
-
                 <div class="form-group">
                     <label for="message">Message</label>
                     <textarea id="message" name="message" rows="5" placeholder="Hi Hari, I'd love to connect about..." required></textarea>
                 </div>
-
                 <button type="submit" class="btn-send">Send Message ✈️</button>
             </form>
-
         </div>
     </section>
 
@@ -305,36 +247,69 @@
         <p>© 2025 Hari Muthu Ganesh R. All rights reserved.</p>
         <p>
             <a href="mailto:hariganesh260@gmail.com">Email</a> |
-            <a href="https://www.linkedin.com/in/hari-muthu-ganesh-r-147662321" target="_blank">LinkedIn</a> |
-            <a href="https://github.com/HariMuthuGanesh" target="_blank">GitHub</a> |
-            <a href="https://www.instagram.com/hari__official_27/" target="_blank">Instagram</a>
+            <a href="https://www.linkedin.com/in/hari-muthu-ganesh-r-147662321" target="_blank" rel="noopener">LinkedIn</a> |
+            <a href="https://github.com/HariMuthuGanesh" target="_blank" rel="noopener">GitHub</a> |
+            <a href="https://www.instagram.com/hari__official_27/" target="_blank" rel="noopener">Instagram</a>
         </p>
     </footer>
 
-    <!-- ===== JS: Active nav highlight on scroll ===== -->
+    <!-- ===== Scroll to top button ===== -->
+    <button class="scroll-top" id="scrollTop" aria-label="Back to top">↑</button>
+
+    <!-- ===== JAVASCRIPT ===== -->
     <script>
-        const sections = ['home', 'about', 'projects', 'contact'];
-        const navLinks = {};
+        /* ---------- Active nav on scroll ---------- */
+        const sections  = ['home', 'about', 'projects', 'contact'];
+        const navLinks  = {};
+        const mNavLinks = {};
         sections.forEach(id => {
-            navLinks[id] = document.getElementById('nav-' + id);
+            navLinks[id]  = document.getElementById('nav-'  + id);
+            mNavLinks[id] = document.getElementById('mnav-' + id);
         });
 
         function setActive() {
-            const scrollY = window.scrollY + 120;
+            const scrollY = window.scrollY + 100;
             let current = 'home';
             sections.forEach(id => {
                 const el = document.getElementById(id);
-                if (el && el.offsetTop <= scrollY) {
-                    current = id;
-                }
+                if (el && el.offsetTop <= scrollY) current = id;
             });
             sections.forEach(id => {
-                navLinks[id].classList.toggle('active', id === current);
+                const isActive = id === current;
+                navLinks[id].classList.toggle('active', isActive);
+                mNavLinks[id].classList.toggle('active', isActive);
             });
         }
-
         window.addEventListener('scroll', setActive, { passive: true });
         setActive();
+
+        /* ---------- Hamburger menu ---------- */
+        const hamburger = document.getElementById('hamburger');
+        const mobileNav = document.getElementById('mobile-nav');
+
+        hamburger.addEventListener('click', () => {
+            const isOpen = mobileNav.classList.toggle('open');
+            hamburger.classList.toggle('open', isOpen);
+            hamburger.setAttribute('aria-expanded', isOpen);
+        });
+
+        // Close mobile nav when a link is clicked
+        mobileNav.querySelectorAll('a').forEach(link => {
+            link.addEventListener('click', () => {
+                mobileNav.classList.remove('open');
+                hamburger.classList.remove('open');
+                hamburger.setAttribute('aria-expanded', false);
+            });
+        });
+
+        /* ---------- Scroll to top ---------- */
+        const scrollTopBtn = document.getElementById('scrollTop');
+        window.addEventListener('scroll', () => {
+            scrollTopBtn.classList.toggle('visible', window.scrollY > 400);
+        }, { passive: true });
+        scrollTopBtn.addEventListener('click', () => {
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        });
     </script>
 
 </body>
