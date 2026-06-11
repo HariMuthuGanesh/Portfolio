@@ -503,9 +503,7 @@ section {
    SECTION 4 — CONTACT
    ============================================================ */
 #contact {
-    background:
-        linear-gradient(to top, rgba(10,4,4,0.90) 0%, rgba(15,5,5,0.75) 100%),
-        url("../assets/black_background.png") center/cover no-repeat;
+    background: #050101;
     padding-bottom: 100px;
 }
 
