@@ -589,6 +589,12 @@ section {
 }
 .proj-link:hover { background: var(--gold-dim); color: #fff4c2; transform: translateX(4px); }
 
+.proj-links-row {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+}
+
 .proj-link-disabled {
     display: inline-flex;
     align-items: center;
