@@ -931,6 +931,7 @@ footer p { margin: 4px 0; }
     }
     .home-content { max-width: 100%; }
     .home-btns    { justify-content: center; }
+    .hero-socials { justify-content: center; }
     .greeting     { font-size: 10px; }
     .home-content h1 { font-size: clamp(28px, 9vw, 40px); }
     .tagline         { font-size: 14px; line-height: 1.85; }
