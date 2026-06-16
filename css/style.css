@@ -185,7 +185,7 @@ section {
         url("../assets/background.png") center / cover no-repeat;
     display: flex;
     align-items: center;
-    justify-content: space-between;
+    justify-content: center;
     gap: 40px;
     padding: var(--nav-h) 8% 80px;
     min-height: 100vh;
@@ -298,30 +298,7 @@ section {
     transform: translateY(-3px);
 }
 
-/* Hero photo */
-.hero-photo {
-    flex-shrink: 0;
-    position: relative;
-    z-index: 1;
-    animation: fadeUp 1s ease 0.3s both;
-}
-.hero-photo img {
-    width: 270px;
-    height: 330px;
-    object-fit: cover;
-    object-position: top center;
-    border-radius: 24px;
-    border: 2px solid var(--gold-border);
-    box-shadow:
-        0 8px 40px rgba(0,0,0,0.8),
-        0 0 0 6px rgba(212,175,55,0.05),
-        0 0 60px rgba(196,30,58,0.2);
-    transition: transform 0.35s, box-shadow 0.35s;
-}
-.hero-photo img:hover {
-    transform: scale(1.03) translateY(-6px);
-    box-shadow: 0 20px 60px rgba(0,0,0,0.9), 0 0 80px rgba(212,175,55,0.18);
-}
+
 
 /* Hero social icons */
 .hero-socials {
@@ -931,7 +908,6 @@ footer p { margin: 4px 0; }
     .contact-wrapper { padding: 0 6%; }
 
     .about-photo-col { position: static; }
-    .hero-photo img  { width: 230px; height: 280px; }
 }
 
 /* ============================================================
@@ -979,9 +955,6 @@ footer p { margin: 4px 0; }
     .about-text-col { min-width: unset; width: 100%; }
     .about-text-col h3 { font-size: 18px; text-align: center; }
     .about-text-col ul li { font-size: 14px; }
-
-    /* Hero photo — hide on mobile */
-    .hero-photo { display: none; }
 
     .skills-grid { grid-template-columns: 1fr; gap: 14px; padding: 0 5%; }
     .skill-card  { padding: 20px; }
