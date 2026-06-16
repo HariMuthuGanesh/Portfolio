@@ -32,6 +32,10 @@
             <div class="progress-bar-container">
                 <div class="progress-bar"></div>
             </div>
+            <div class="loader-status">
+                <span id="loader-message">Initializing System...</span>
+                <span id="loader-percentage">0%</span>
+            </div>
         </div>
     </div>
 
@@ -497,11 +501,37 @@
         /* ---------- Preloader ---------- */
         window.addEventListener('load', () => {
             const preloader = document.getElementById('preloader');
-            // Wait for 2.5s to let the animation play out before fading
-            setTimeout(() => {
-                preloader.classList.add('preloader-hidden');
-                document.body.classList.remove('loading');
-            }, 2500);
+            const percentageEl = document.getElementById('loader-percentage');
+            const messageEl = document.getElementById('loader-message');
+            
+            const messages = [
+                "Initializing System...",
+                "Loading Assets...",
+                "Establishing Connection...",
+                "Decrypting Data...",
+                "Welcome."
+            ];
+            
+            let progress = 0;
+            const interval = setInterval(() => {
+                progress += 1;
+                if(percentageEl) percentageEl.textContent = progress + '%';
+                
+                if(messageEl) {
+                    if(progress === 20) messageEl.textContent = messages[1];
+                    if(progress === 50) messageEl.textContent = messages[2];
+                    if(progress === 80) messageEl.textContent = messages[3];
+                    if(progress === 100) messageEl.textContent = messages[4];
+                }
+                
+                if(progress >= 100) {
+                    clearInterval(interval);
+                    setTimeout(() => {
+                        preloader.classList.add('preloader-hidden');
+                        document.body.classList.remove('loading');
+                    }, 400); // Small pause at 100% before fading
+                }
+            }, 20); // Count up over 2 seconds
         });
     </script>
 

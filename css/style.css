@@ -1011,12 +1011,34 @@ footer p { margin: 4px 0; }
     left: 0;
     width: 100%;
     height: 100%;
-    background: #0a0808;
+    background-color: #0a0808;
+    background-image: 
+        linear-gradient(rgba(196, 30, 58, 0.05) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(196, 30, 58, 0.05) 1px, transparent 1px);
+    background-size: 30px 30px;
+    box-shadow: inset 0 0 150px rgba(0,0,0,0.95);
     z-index: 9999;
     display: flex;
     justify-content: center;
     align-items: center;
     transition: opacity 0.6s ease, visibility 0.6s ease;
+}
+
+.loader-status {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    color: var(--text-color);
+    font-size: 13px;
+    font-family: monospace;
+    margin-top: -5px;
+    opacity: 0.7;
+    letter-spacing: 1px;
+}
+
+#loader-percentage {
+    color: var(--gold);
+    font-weight: bold;
 }
 
 .loader-content {
