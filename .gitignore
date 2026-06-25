@@ -1,0 +1,5 @@
+# Ignore all markdown files
+*.md
+
+# Except README files (usually you want these on GitHub)
+!README.md

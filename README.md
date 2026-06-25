@@ -1,14 +1,14 @@
 # Portfolio — Hari Muthu Ganesh R
 
-Personal portfolio website built with HTML, CSS, and JavaScript.
+This repository contains multiple versions of my personal portfolio.
 
-## Stack
-- HTML5 / CSS3 / Vanilla JS
-- Single-page scrollable layout
-- Hosted on GitHub Pages
+## Structure
 
-## Sections
-- Home · About Me · Projects · Contact
+- **[`v1/`](./v1)**: The current, live version of my portfolio.
+- **[`v2/`](./v2)**: The upcoming, upgraded version (Work in Progress).
 
-## Contact
-[hariganesh260@gmail.com](mailto:hariganesh260@gmail.com) · [LinkedIn](https://www.linkedin.com/in/hari-muthu-ganesh-r-147662321) · [GitHub](https://github.com/HariMuthuGanesh)
+## Hosting on GitHub Pages
+
+The root of this repository contains an `index.html` file that automatically redirects visitors to the `v1` folder. 
+
+When `v2` is ready, you can update the root `index.html` to redirect to `v2/` instead!

@@ -1,0 +1,564 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description"
+        content="Portfolio of Hari Muthu Ganesh R — CSE student specializing in Cybersecurity and Full Stack Development.">
+
+    <!-- Open Graph -->
+    <meta property="og:title" content="Hari Muthu Ganesh R — Portfolio">
+    <meta property="og:description" content="Security Engineer &amp; Full Stack Developer | NEC Kovilpatti">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://HariMuthuGanesh.github.io/Portfolio">
+    <meta property="og:image" content="https://HariMuthuGanesh.github.io/Portfolio/assets/hari_portrait.png">
+    <link rel="canonical" href="https://HariMuthuGanesh.github.io/Portfolio">
+
+    <title>Hari Muthu Ganesh R — Portfolio</title>
+    <link rel="icon" href="assets/logo1.png" type="image/png">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body class="loading">
+
+    <!-- ===== PRELOADER ===== -->
+    <div id="preloader">
+        <div class="loader-content">
+            <h1 class="loader-text">HMG</h1>
+            <div class="progress-bar-container">
+                <div class="progress-bar"></div>
+            </div>
+            <div class="loader-status">
+                <span id="loader-message">Initializing System...</span>
+                <span id="loader-percentage">0%</span>
+            </div>
+        </div>
+    </div>
+
+    <!-- ===== NAVBAR ===== -->
+    <header>
+        <nav class="navbar" id="navbar">
+            <div class="logo">
+                <a href="#home"><img src="assets/logo1.png" alt="Hari's Logo" width="52" height="52"></a>
+            </div>
+            <!-- Desktop nav -->
+            <ul class="nav-links">
+                <li><a href="#home" class="active" id="nav-home">HOME</a></li>
+                <li><a href="#about" id="nav-about">ABOUT ME</a></li>
+                <li><a href="#experience" id="nav-experience">EXPERIENCE</a></li>
+                <li><a href="#projects" id="nav-projects">PROJECTS</a></li>
+                <li><a href="#contact" id="nav-contact">CONTACT</a></li>
+            </ul>
+            <!-- Hamburger (mobile only) -->
+            <button class="hamburger" id="hamburger" aria-label="Toggle navigation" aria-expanded="false">
+                <span></span><span></span><span></span>
+            </button>
+        </nav>
+        <!-- Mobile nav overlay -->
+        <div class="mobile-nav" id="mobile-nav">
+            <a href="#home" class="active" id="mnav-home">HOME</a>
+            <a href="#about" id="mnav-about">ABOUT ME</a>
+            <a href="#experience" id="mnav-experience">EXPERIENCE</a>
+            <a href="#projects" id="mnav-projects">PROJECTS</a>
+            <a href="#contact" id="mnav-contact">CONTACT</a>
+        </div>
+    </header>
+
+    <!-- ===================================================
+         SECTION 1 — HOME
+    =================================================== -->
+    <section id="home">
+        <div class="home-content">
+            <p class="greeting">👋 Welcome to my portfolio</p>
+            <h1>Hi, I'm <span>Hari Muthu Ganesh R</span></h1>
+            <p class="tagline">
+                A 3rd-year CSE student at <strong>National Engineering College, Kovilpatti</strong>.
+                Aspiring <strong><span id="typed-role"></span><span class="cursor-blink">|</span></strong>
+                with a CGPA of <strong>8.71</strong>. I build things that matter.
+            </p>
+            <div class="home-btns">
+                <a href="#projects" class="btn-primary">See My Projects ↓</a>
+                <a href="#about" class="btn-secondary">About Me →</a>
+                <a href="assets/Hari_Resume.pdf" class="btn-resume" download>⬇ Download CV</a>
+            </div>
+            <div class="hero-socials">
+                <a href="https://github.com/HariMuthuGanesh" target="_blank" rel="noopener" aria-label="GitHub"
+                    class="social-icon">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+                        <path
+                            d="M12 0C5.374 0 0 5.373 0 12c0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23A11.509 11.509 0 0 1 12 5.803c1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576C20.566 21.797 24 17.3 24 12c0-6.627-5.373-12-12-12z" />
+                    </svg>
+                </a>
+                <a href="https://www.linkedin.com/in/hari-muthu-ganesh-r-147662321" target="_blank" rel="noopener"
+                    aria-label="LinkedIn" class="social-icon">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+                        <path
+                            d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 0 1-2.063-2.065 2.064 2.064 0 1 1 2.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z" />
+                    </svg>
+                </a>
+                <a href="mailto:hariganesh260@gmail.com" aria-label="Email" class="social-icon">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+                        <path
+                            d="M20 4H4c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4-8 5-8-5V6l8 5 8-5v2z" />
+                    </svg>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===================================================
+         SECTION 2 — ABOUT ME
+    =================================================== -->
+    <section id="about">
+        <h2 class="section-title">About <span>Me</span></h2>
+        <p class="section-subtitle">A little about who I am and what I do</p>
+
+        <div class="about-wrapper">
+            <div class="about-photo-col">
+                <img src="assets/hari_portrait.png" alt="Hari Muthu Ganesh R" width="200" height="248" loading="lazy">
+                <div class="about-badges">
+                    <div class="badge">🎓 NEC Kovilpatti — CSE (3rd Year)</div>
+                    <div class="badge">⭐ CGPA: 8.71</div>
+                    <div class="badge">🛡️ Cybersecurity Enthusiast</div>
+                    <div class="badge">🌐 Full Stack Developer</div>
+                </div>
+            </div>
+
+            <div class="about-text-col">
+                <h3>Who am I?</h3>
+                <ul>
+                    <li><strong>Full Stack Developer</strong> with experience building scalable web applications using
+                        Java, Spring Boot, React, Next.js, MongoDB, and MySQL.</li>
+                    <li>Worked on <strong>embedded radar systems</strong> using TI mmWave sensors, developing real-time
+                        human motion and presence detection solutions for industrial applications.</li>
+                    <li>Experienced in <strong>cybersecurity and penetration testing</strong> through hands-on practice
+                        on Hack The Box, TryHackMe, OSINT investigations, and security-focused projects.</li>
+                    <li>Built multiple <strong>end-to-end projects</strong> including event management platforms,
+                        academic automation systems, AI-powered monitoring tools, and sensor-based applications.</li>
+                    <li>Passionate about <strong>solving real-world problems</strong> by combining software engineering,
+                        cybersecurity, embedded systems, and AI technologies.</li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="skills-grid">
+            <div class="skill-card reveal">
+                <h3><span class="icon">💻</span> Languages &amp; Tools</h3>
+                <ul>
+                    <li><img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/java/java-original.svg"
+                            alt="Java" loading="lazy">Java</li>
+                    <li><img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/python/python-original.svg"
+                            alt="Python" loading="lazy">Python</li>
+                    <li><img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/javascript/javascript-original.svg"
+                            alt="JavaScript" loading="lazy">JavaScript</li>
+                    <li><img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/mysql/mysql-original.svg"
+                            alt="SQL" loading="lazy">SQL</li>
+                    <li><img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/git/git-original.svg"
+                            alt="Git" loading="lazy">Git</li>
+                    <li><img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/linux/linux-original.svg"
+                            alt="Linux" loading="lazy">Linux</li>
+                    <li><img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/postman/postman-original.svg"
+                            alt="Postman" loading="lazy">Postman</li>
+                </ul>
+            </div>
+            <div class="skill-card reveal">
+                <h3><span class="icon">🛡️</span> Cybersecurity</h3>
+                <ul>
+                    <li>⚔️ CTF (HackTheBox, TryHackMe)</li>
+                    <li>🔍 OSINT</li>
+                    <li>🕵️ Penetration Testing</li>
+                    <li>🌐 Network Security</li>
+                    <li>🏢 Prodigy Infotech Internship</li>
+                </ul>
+            </div>
+            <div class="skill-card reveal">
+                <h3><span class="icon">🌐</span> Frameworks &amp; Databases</h3>
+                <ul>
+                    <li><img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/spring/spring-original.svg"
+                            alt="Spring Boot" loading="lazy">Spring Boot</li>
+                    <li><img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/nodejs/nodejs-original.svg"
+                            alt="Node.js" loading="lazy">Node.js</li>
+                    <li><img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/express/express-original-wordmark.svg"
+                            alt="Express.js" loading="lazy" class="icon-invert">Express.js</li>
+                    <li><img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/mysql/mysql-original.svg"
+                            alt="MySQL" loading="lazy">MySQL</li>
+                    <li><img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/mongodb/mongodb-original.svg"
+                            alt="MongoDB" loading="lazy">MongoDB</li>
+                    <li>⚙️ n8n Automation</li>
+                </ul>
+            </div>
+            <div class="skill-card reveal">
+                <h3><span class="icon">📡</span> Embedded &amp; Radar</h3>
+                <ul>
+                    <li>📡 TI mmWave Radar</li>
+                    <li>🔌 UART Communication</li>
+                    <li>💾 Firmware Flashing</li>
+                    <li><img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/python/python-original.svg"
+                            alt="Python" loading="lazy">TLV Parsing (C/Python)</li>
+                    <li>📊 Radar Data Acquisition</li>
+                </ul>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===================================================
+         SECTION 3 — EXPERIENCE
+    =================================================== -->
+    <section id="experience">
+        <h2 class="section-title">Work <span>Experience</span></h2>
+        <p class="section-subtitle">Where I've applied my skills in the real world</p>
+
+        <div class="experience-list">
+            <div class="exp-card">
+                <div class="exp-header">
+                    <div class="exp-left">
+                        <h3 class="exp-role">MMWave Radar Intern</h3>
+                        <p class="exp-company">Mistral Solutions Pvt. Ltd.</p>
+                    </div>
+                    <span class="exp-date">Jun 2025 — Present</span>
+                </div>
+                <ul class="exp-points">
+                    <li>Worked with TI mmWave radar platforms to configure firmware, acquire sensor data, and validate
+                        radar system functionality.</li>
+                    <li>Developed Python-based utilities for parsing and processing TLV radar frames into structured
+                        data for radar data analysis.</li>
+                    <li>Contributed to the development of a radar-based industrial safety monitoring solution (Vigil
+                        Sense) for real-time human detection and workplace awareness.</li>
+                </ul>
+                <div class="exp-tags">
+                    <span>TI mmWave</span><span>Python</span><span>TLV Parsing</span>
+                    <span>Firmware</span><span>UART</span><span>Radar Data Acquisition</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===================================================
+         SECTION 4 — PROJECTS
+    =================================================== -->
+    <section id="projects">
+        <h2 class="section-title">My <span>Projects</span></h2>
+        <p class="section-subtitle">Things I've built — security tools, full-stack apps &amp; embedded systems</p>
+
+        <div class="projects-grid">
+
+            <div class="project-card">
+                <div style="display: flex; justify-content: space-between; align-items: baseline; margin-bottom: 5px;">
+                    <span class="proj-tag">React · Node.js · Express · MongoDB · Ongoing</span>
+                    <span style="font-size: 11px; color: var(--gold); font-weight: bold; white-space: nowrap;">Jan 2026 — Present</span>
+                </div>
+                <h3 style="margin-top: 0;">NEC CBCS <em style="font-size:11px;font-weight:400;color:#aaa;">(Ongoing · Team Project)</em></h3>
+                <p class="proj-desc">Choice-Based Credit System (CBCS) elective allocation portal built for National
+                    Engineering College (NEC). Automates course registrations, student dashboard allocations, and
+                    administrative scheduling.</p>
+                <span class="proj-link-disabled">🔒 College Project</span>
+            </div>
+
+            <div class="project-card">
+                <div style="display: flex; justify-content: space-between; align-items: baseline; margin-bottom: 5px;">
+                    <span class="proj-tag">PyQt5 · mmWave Radar · Embedded</span>
+                    <span style="font-size: 11px; color: var(--gold); font-weight: bold; white-space: nowrap;">Apr 2026 — Jun 2026</span>
+                </div>
+                <h3 style="margin-top: 0;">VIGIL SENSE</h3>
+                <p class="proj-desc">PyQt5 application powered by TI IWR6843AOP mmWave radar for industrial safety
+                    monitoring. Features real-time people tracking, fall detection, and restricted zone breach alerts.
+                </p>
+                <a class="proj-link" target="_blank" rel="noopener"
+                    href="https://github.com/HariMuthuGanesh/Vigle_Sense">↗ View on GitHub</a>
+            </div>
+
+            <div class="project-card">
+                <div style="display: flex; justify-content: space-between; align-items: baseline; margin-bottom: 5px;">
+                    <span class="proj-tag">HTML · CSS · JavaScript · Node.js · Express</span>
+                    <span style="font-size: 11px; color: var(--gold); font-weight: bold; white-space: nowrap;">Dec 2025 — May 2026</span>
+                </div>
+                <h3 style="margin-top: 0;">CodeVerse</h3>
+                <p class="proj-desc">Web-based interactive platform to host coding events, quizzes, and
+                    data-structure challenges. Provides a smooth participant experience with organizer controls
+                    for scores, rounds, and progress tracking in real time.</p>
+                <div class="proj-links-row">
+                    <a class="proj-link" target="_blank" rel="noopener"
+                        href="https://github.com/HariMuthuGanesh/CodeVerse">↗ View on GitHub</a>
+                    <a class="proj-link" target="_blank" rel="noopener" href="https://codeverse-ymd8.onrender.com/">🌐
+                        Live Demo</a>
+                </div>
+            </div>
+
+            <div class="project-card">
+                <div style="display: flex; justify-content: space-between; align-items: baseline; margin-bottom: 5px;">
+                    <span class="proj-tag">Python · Tkinter · OS Scheduling</span>
+                    <span style="font-size: 11px; color: var(--gold); font-weight: bold; white-space: nowrap;">Jun 2026</span>
+                </div>
+                <h3 style="margin-top: 0;">Least Laxity First (LLF)</h3>
+                <p class="proj-desc">Python implementation of the Least Laxity First real-time scheduling
+                    algorithm with a graphical GUI that visually displays process scheduling as an
+                    animated Gantt chart.</p>
+                <a class="proj-link" target="_blank" rel="noopener"
+                    href="https://github.com/HariMuthuGanesh/Least_Laxity_First">↗ View on GitHub</a>
+            </div>
+
+            <div class="project-card">
+                <div style="display: flex; justify-content: space-between; align-items: baseline; margin-bottom: 5px;">
+                    <span class="proj-tag">n8n · Supabase · Telegram Bot</span>
+                    <span style="font-size: 11px; color: var(--gold); font-weight: bold; white-space: nowrap;">Dec 2025</span>
+                </div>
+                <h3 style="margin-top: 0;">PaperHub</h3>
+                <p class="proj-desc">An n8n automation bot deployed on Hugging Face Spaces with Supabase PostgreSQL. The
+                    Telegram bot <strong>@nec_ques_bot</strong> lets NEC students retrieve question papers by
+                    department, subject code, and year.</p>
+                <span class="proj-link-disabled">🔒 Internal Tool</span>
+            </div>
+
+            <div class="project-card">
+                <div style="display: flex; justify-content: space-between; align-items: baseline; margin-bottom: 5px;">
+                    <span class="proj-tag">Spring Boot · JWT · MySQL · HTML/JS</span>
+                    <span style="font-size: 11px; color: var(--gold); font-weight: bold; white-space: nowrap;">Feb 2026 — Jun 2026</span>
+                </div>
+                <h3 style="margin-top: 0;">Club Management System</h3>
+                <p class="proj-desc">Full-stack web app built as an academic EL project for NEC — Spring Boot backend
+                    with JWT authentication, MySQL database, and a plain HTML/JS frontend.</p>
+                <span class="proj-link-disabled">🔒 Academic Project</span>
+            </div>
+
+            <div class="project-card">
+                <div style="display: flex; justify-content: space-between; align-items: baseline; margin-bottom: 5px;">
+                    <span class="proj-tag">Python · Tkinter · Crypto</span>
+                    <span style="font-size: 11px; color: var(--gold); font-weight: bold; white-space: nowrap;">Aug 2025</span>
+                </div>
+                <h3 style="margin-top: 0;">Image Encryption &amp; Decryption</h3>
+                <p class="proj-desc">A Python + Tkinter tool that lets users securely encrypt and decrypt JPEG/PNG
+                    images using a custom key, with an easy-to-use GUI for quick interaction.</p>
+                <a class="proj-link" target="_blank" rel="noopener"
+                    href="https://github.com/HariMuthuGanesh/Image_Encrypt_Decrypt">↗ View on GitHub</a>
+            </div>
+
+            <div class="project-card">
+                <div style="display: flex; justify-content: space-between; align-items: baseline; margin-bottom: 5px;">
+                    <span class="proj-tag">Python · Tkinter · Security</span>
+                    <span style="font-size: 11px; color: var(--gold); font-weight: bold; white-space: nowrap;">Aug 2025</span>
+                </div>
+                <h3 style="margin-top: 0;">Password Complexity Analyser</h3>
+                <p class="proj-desc">Evaluates password strength based on length, character variety, and common
+                    patterns, providing users with feedback to create more secure passwords.</p>
+                <a class="proj-link" target="_blank" rel="noopener"
+                    href="https://github.com/HariMuthuGanesh/Password_Analyser">↗ View on GitHub</a>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- ===================================================
+         SECTION 4 — CONTACT
+    =================================================== -->
+    <section id="contact">
+        <h2 class="section-title">Get In <span>Touch</span></h2>
+        <p class="section-subtitle">Feel free to reach out for collaborations, opportunities, or just to say hi.</p>
+
+        <div class="contact-wrapper">
+            <div class="contact-cta">
+                <div class="availability-badge">
+                    <span class="avail-dot"></span>
+                    Open to opportunities
+                </div>
+                <p>I'm always open to discussing new projects, creative ideas, or opportunities to be part of something
+                    amazing. Drop me a message or connect on social media.</p>
+                <p class="reply-note">💬 I typically reply within 24 hours.</p>
+                <div class="cta-buttons">
+                    <a href="mailto:hariganesh260@gmail.com" class="cta-btn email">
+                        <span class="cta-icon">✉️</span>hariganesh260@gmail.com
+                    </a>
+                    <a href="https://www.linkedin.com/in/hari-muthu-ganesh-r-147662321" target="_blank" rel="noopener"
+                        class="cta-btn linkedin">
+                        <span class="cta-icon">🔗</span>LinkedIn — Hari Muthu Ganesh R
+                    </a>
+                    <a href="https://github.com/HariMuthuGanesh" target="_blank" rel="noopener" class="cta-btn github">
+                        <span class="cta-icon">🐙</span>GitHub — HariMuthuGanesh
+                    </a>
+                </div>
+            </div>
+
+            <form class="contact-form" action="https://formsubmit.co/3e64eccf7deb7471c0c84a5e7878bdb8" method="POST">
+                <h3>Send a Message</h3>
+                <input type="hidden" name="_subject" value="New message from Portfolio">
+                <input type="hidden" name="_captcha" value="false">
+                <input type="hidden" name="_next" value="https://HariMuthuGanesh.github.io/Portfolio">
+
+                <div class="form-group">
+                    <label for="name">Your Name</label>
+                    <input type="text" id="name" name="name" placeholder="John Doe" required autocomplete="name">
+                </div>
+                <div class="form-group">
+                    <label for="email">Email Address</label>
+                    <input type="email" id="email" name="email" placeholder="john@example.com" required
+                        autocomplete="email">
+                </div>
+                <div class="form-group">
+                    <label for="message">Message</label>
+                    <textarea id="message" name="message" rows="5" placeholder="Hi Hari, I'd love to connect about..."
+                        required></textarea>
+                </div>
+                <button type="submit" class="btn-send">Send Message ✈️</button>
+            </form>
+        </div>
+    </section>
+
+    <!-- ===== TOAST NOTIFICATION ===== -->
+    <div class="toast" id="toast">✅ Message sent! I'll get back to you soon.</div>
+
+    <!-- ===== FOOTER ===== -->
+    <footer class="footer">
+        <p>© 2025 Hari Muthu Ganesh R. All rights reserved.</p>
+        <p>
+            <a href="mailto:hariganesh260@gmail.com">Email</a> |
+            <a href="https://www.linkedin.com/in/hari-muthu-ganesh-r-147662321" target="_blank"
+                rel="noopener">LinkedIn</a> |
+            <a href="https://github.com/HariMuthuGanesh" target="_blank" rel="noopener">GitHub</a> |
+            <a href="https://www.instagram.com/hari__official_27/" target="_blank" rel="noopener">Instagram</a>
+        </p>
+    </footer>
+
+    <!-- ===== Scroll to top button ===== -->
+    <button class="scroll-top" id="scrollTop" aria-label="Back to top">↑</button>
+
+    <!-- ===== JAVASCRIPT ===== -->
+    <script>
+        /* ---------- Typing animation ---------- */
+        const roles = ['Security Engineer', 'Full Stack Developer', 'Embedded Systems Engineer', 'CTF Player'];
+        let roleIdx = 0, charIdx = 0, isDeleting = false;
+        const typedEl = document.getElementById('typed-role');
+        function typeRole() {
+            if (!typedEl) return;
+            const current = roles[roleIdx];
+            if (isDeleting) {
+                typedEl.textContent = current.slice(0, --charIdx);
+                if (charIdx === 0) { isDeleting = false; roleIdx = (roleIdx + 1) % roles.length; setTimeout(typeRole, 500); return; }
+            } else {
+                typedEl.textContent = current.slice(0, ++charIdx);
+                if (charIdx === current.length) { isDeleting = true; setTimeout(typeRole, 2000); return; }
+            }
+            setTimeout(typeRole, isDeleting ? 55 : 85);
+        }
+        typeRole();
+
+        /* ---------- Scroll reveal (IntersectionObserver) ---------- */
+        const revealEls = document.querySelectorAll('.reveal');
+        if ('IntersectionObserver' in window) {
+            const revealObserver = new IntersectionObserver((entries) => {
+                entries.forEach((entry, i) => {
+                    if (entry.isIntersecting) {
+                        setTimeout(() => entry.target.classList.add('visible'), i * 100);
+                        revealObserver.unobserve(entry.target);
+                    }
+                });
+            }, { threshold: 0.12 });
+            revealEls.forEach(el => revealObserver.observe(el));
+        } else {
+            revealEls.forEach(el => el.classList.add('visible'));
+        }
+
+        /* ---------- Active nav on scroll ---------- */
+        const sections = ['home', 'about', 'experience', 'projects', 'contact'];
+        const navLinks = {};
+        const mNavLinks = {};
+        sections.forEach(id => {
+            navLinks[id] = document.getElementById('nav-' + id);
+            mNavLinks[id] = document.getElementById('mnav-' + id);
+        });
+
+        function setActive() {
+            const scrollY = window.scrollY + 100;
+            let current = 'home';
+            sections.forEach(id => {
+                const el = document.getElementById(id);
+                if (el && el.offsetTop <= scrollY) current = id;
+            });
+            sections.forEach(id => {
+                const isActive = id === current;
+                navLinks[id].classList.toggle('active', isActive);
+                mNavLinks[id].classList.toggle('active', isActive);
+            });
+        }
+        window.addEventListener('scroll', setActive, { passive: true });
+        setActive();
+
+        /* ---------- Hamburger menu ---------- */
+        const hamburger = document.getElementById('hamburger');
+        const mobileNav = document.getElementById('mobile-nav');
+
+        hamburger.addEventListener('click', () => {
+            const isOpen = mobileNav.classList.toggle('open');
+            hamburger.classList.toggle('open', isOpen);
+            hamburger.setAttribute('aria-expanded', isOpen);
+        });
+
+        mobileNav.querySelectorAll('a').forEach(link => {
+            link.addEventListener('click', () => {
+                mobileNav.classList.remove('open');
+                hamburger.classList.remove('open');
+                hamburger.setAttribute('aria-expanded', false);
+            });
+        });
+
+        /* ---------- Scroll to top ---------- */
+        const scrollTopBtn = document.getElementById('scrollTop');
+        window.addEventListener('scroll', () => {
+            scrollTopBtn.classList.toggle('visible', window.scrollY > 400);
+        }, { passive: true });
+        scrollTopBtn.addEventListener('click', () => {
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        });
+
+        /* ---------- Toast on form submit ---------- */
+        const contactForm = document.querySelector('.contact-form');
+        const toast = document.getElementById('toast');
+        if (contactForm && toast) {
+            contactForm.addEventListener('submit', () => {
+                toast.classList.add('show');
+                setTimeout(() => toast.classList.remove('show'), 4000);
+            });
+        }
+
+        /* ---------- Preloader ---------- */
+        window.addEventListener('load', () => {
+            const preloader = document.getElementById('preloader');
+            const percentageEl = document.getElementById('loader-percentage');
+            const messageEl = document.getElementById('loader-message');
+            
+            const messages = [
+                "Initializing System...",
+                "Loading Assets...",
+                "Establishing Connection...",
+                "Decrypting Data...",
+                "Welcome."
+            ];
+            
+            let progress = 0;
+            const interval = setInterval(() => {
+                progress += 1;
+                if(percentageEl) percentageEl.textContent = progress + '%';
+                
+                if(messageEl) {
+                    if(progress === 20) messageEl.textContent = messages[1];
+                    if(progress === 50) messageEl.textContent = messages[2];
+                    if(progress === 80) messageEl.textContent = messages[3];
+                    if(progress === 100) messageEl.textContent = messages[4];
+                }
+                
+                if(progress >= 100) {
+                    clearInterval(interval);
+                    setTimeout(() => {
+                        preloader.classList.add('preloader-hidden');
+                        document.body.classList.remove('loading');
+                    }, 400); // Small pause at 100% before fading
+                }
+            }, 20); // Count up over 2 seconds
+        });
+    </script>
+
+</body>
+
+</html>
