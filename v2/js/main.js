@@ -154,7 +154,7 @@ function maximizeWindow(winId) {
 // ─── DRAG ────────────────────────────────────────────────────
 function startDrag(e, winId) {
     if (e.target.closest('.wc') || e.target.closest('.win-actions') ||
-        e.target.closest('.win-menu-bar') || e.target.closest('.fm-titlebar-content')) {
+        e.target.closest('.menu-item') || e.target.closest('input') || e.target.closest('button')) {
         return;
     }
     const el = getWin(winId);
