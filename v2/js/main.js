@@ -278,14 +278,14 @@ const FM_VIEWS = {
             { type:'folder', name:'Web_Dev',      icon:'fa-globe',          color:'#0d47a1,#1976d2', action: ()=>openFolderItem('webdev')    },
             { type:'folder', name:'Radar_Lab',    icon:'fa-satellite-dish', color:'#1b5e20,#388e3c', action: ()=>openFolderItem('radar')     },
             { type:'folder', name:'Certificates', icon:'fa-certificate',    color:'#4a148c,#7b1fa2', action: ()=>openFolderItem('certs')     },
-            { type:'pdf',    name:'Resume.pdf',                             action: ()=>openFolderItem('resume') },
+            { type:'pdf',    name:'Resume.pdf',                             action: ()=>window.open('assets/resume.pdf', '_blank') },
             { type:'txt',    name:'Notes.txt',                              action: ()=>openWindow('notes')       }
         ]
     },
     documents: {
         label: 'Documents',
         items: [
-            { type:'pdf', name:'Resume.pdf', action: ()=>openFolderItem('resume') },
+            { type:'pdf', name:'Resume.pdf', action: ()=>window.open('assets/resume.pdf', '_blank') },
             { type:'txt', name:'Notes.txt',  action: ()=>openWindow('notes')       }
         ]
     },
@@ -294,7 +294,7 @@ const FM_VIEWS = {
         items: [
             { type:'txt',    name:'Notes.txt',  action: ()=>openWindow('notes')       },
             { type:'folder', name:'Projects',   icon:'fa-code',           color:'#2e7d32,#4caf50', action: ()=>openFolderItem('projects') },
-            { type:'pdf',    name:'Resume.pdf', action: ()=>openFolderItem('resume') },
+            { type:'pdf',    name:'Resume.pdf', action: ()=>window.open('assets/resume.pdf', '_blank') },
             { type:'folder', name:'Radar_Lab',  icon:'fa-satellite-dish', color:'#1b5e20,#388e3c', action: ()=>openFolderItem('radar')   }
         ]
     },
