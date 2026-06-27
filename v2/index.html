@@ -1,0 +1,750 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HMGOS v2.0 — Hari Muthu Ganesh</title>
+    <meta name="description"
+        content="Hari Muthu Ganesh — Full Stack Developer, Embedded Systems Engineer & Cyber Security Enthusiast. HMGOS Portfolio Desktop.">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@300;400;500;700&family=Inter:wght@300;400;500;600&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+
+    <!-- ═══════════════ BOOT SCREEN ═══════════════ -->
+    <div id="boot-screen">
+        <div class="boot-content">
+            <div class="boot-logo">
+                <i class="fa-solid fa-shield-halved"></i>
+            </div>
+            <div class="boot-name mono">HMGOS v2.0</div>
+            <div class="boot-bar-wrap">
+                <div class="boot-bar" id="boot-bar"></div>
+            </div>
+            <div class="boot-msg mono" id="boot-msg">Initializing system...</div>
+        </div>
+    </div>
+
+    <!-- ═══════════════ DESKTOP OS ═══════════════ -->
+    <div id="os" class="hidden">
+
+        <!-- ── TOP BAR ── -->
+        <div id="topbar">
+            <div class="tb-left">
+                <div class="os-logo mono">
+                    <i class="fa-solid fa-shield-halved" style="color:#00ff41;"></i>
+                    <span>HMGOS v2.0</span>
+                </div>
+                <div class="workspaces">
+                    <span class="ws active" onclick="switchWorkspace(this)">1</span>
+                    <span class="ws" onclick="switchWorkspace(this)">2</span>
+                    <span class="ws" onclick="switchWorkspace(this)">3</span>
+                    <span class="ws" onclick="switchWorkspace(this)">4</span>
+                </div>
+            </div>
+            <div class="tb-center">
+                <span id="topbar-time" class="mono">12:45 AM</span>
+            </div>
+            <div class="tb-right">
+                <i class="fa-solid fa-volume-high tb-icon"></i>
+                <i class="fa-solid fa-wifi tb-icon"></i>
+                <i class="fa-solid fa-battery-three-quarters tb-icon"></i>
+                <span class="mono tb-user">hari@portfolio</span>
+                <div class="user-avatar">H</div>
+            </div>
+        </div>
+
+        <!-- ── WORKSPACE ── -->
+        <div id="workspace">
+
+            <!-- LEFT DOCK -->
+            <div id="dock">
+                <div class="dock-item active" onclick="openWindow('terminal')" title="Terminal">
+                    <div class="dock-icon terminal-icon"><i class="fa-solid fa-terminal"></i></div>
+                    <span class="dock-label">Terminal</span>
+                </div>
+                <div class="dock-item" onclick="openWindow('about')" title="About_Me">
+                    <div class="dock-icon about-icon"><i class="fa-solid fa-user"></i></div>
+                    <span class="dock-label">About_Me</span>
+                </div>
+                <div class="dock-item" onclick="openWindow('projects')" title="Projects">
+                    <div class="dock-icon projects-icon"><i class="fa-solid fa-code"></i></div>
+                    <span class="dock-label">Projects</span>
+                </div>
+                <div class="dock-item" onclick="openWindow('cyber')" title="Cyber_Lab">
+                    <div class="dock-icon cyber-icon"><i class="fa-solid fa-shield-halved"></i></div>
+                    <span class="dock-label">Cyber_Lab</span>
+                </div>
+                <div class="dock-item" onclick="openWindow('webdev')" title="Web_Dev">
+                    <div class="dock-icon webdev-icon"><i class="fa-solid fa-globe"></i></div>
+                    <span class="dock-label">Web_Dev</span>
+                </div>
+                <div class="dock-item" onclick="openWindow('radar')" title="Radar_Lab">
+                    <div class="dock-icon radar-icon"><i class="fa-solid fa-satellite-dish"></i></div>
+                    <span class="dock-label">Radar_Lab</span>
+                </div>
+                <div class="dock-item" onclick="openWindow('notes')" title="Notes.txt">
+                    <div class="dock-icon notes-icon"><i class="fa-solid fa-file-lines"></i></div>
+                    <span class="dock-label">Notes.txt</span>
+                </div>
+                <div class="dock-item" onclick="openWindow('contact')" title="Contact_Me">
+                    <div class="dock-icon contact-icon"><i class="fa-solid fa-envelope"></i></div>
+                    <span class="dock-label">Contact_Me</span>
+                </div>
+                <div class="dock-spacer"></div>
+                <div class="dock-item" onclick="openWindow('trash')" title="Trash">
+                    <div class="dock-icon trash-icon"><i class="fa-solid fa-trash"></i></div>
+                    <span class="dock-label">Trash</span>
+                </div>
+            </div>
+
+            <!-- DESKTOP AREA -->
+            <div id="desktop">
+                <canvas id="matrix-bg"></canvas>
+
+                <!-- ══ WINDOW: TERMINAL ══ -->
+                <div class="window" id="win-terminal" style="left:8px;top:4px;width:400px;height:340px;">
+                    <div class="win-titlebar" onmousedown="startDrag(event,'win-terminal')">
+                        <div class="win-controls">
+                            <span class="wc wc-close" onclick="closeWindow('win-terminal')" title="Close"></span>
+                            <span class="wc wc-min" onclick="minimizeWindow('win-terminal')" title="Minimize"></span>
+                            <span class="wc wc-max" onclick="maximizeWindow('win-terminal')" title="Maximize"></span>
+                        </div>
+                        <span class="win-title mono">hari@portfolio:~</span>
+                        <div class="win-actions">
+                            <span class="win-act-btn"><i class="fa-solid fa-plus"></i></span>
+                            <span class="win-act-btn"><i class="fa-regular fa-square"></i></span>
+                        </div>
+                    </div>
+                    <div class="win-body terminal-body" id="terminal-win-body">
+                        <!-- NEOFETCH DISPLAY -->
+                        <div class="neofetch-display">
+                            <pre class="nf-art" id="nf-art"></pre>
+                            <div class="nf-info mono" id="nf-info">
+                                <div class="nf-line"><span class="nf-user">hari</span><span class="nf-at">@</span><span
+                                        class="nf-host">portfolio</span></div>
+                                <div class="nf-separator">--------------------</div>
+                                <div class="nf-line"><span class="nf-key">OS:</span><span class="nf-val">HMGOS (Ubuntu
+                                        Based)</span></div>
+                                <div class="nf-line"><span class="nf-key">Host:</span><span class="nf-val">Portfolio
+                                        System</span></div>
+                                <div class="nf-line"><span class="nf-key">Kernel:</span><span
+                                        class="nf-val">6.6.0-custom</span></div>
+                                <div class="nf-line"><span class="nf-key">Uptime:</span><span class="nf-val">2 days, 14
+                                        hours</span></div>
+                                <div class="nf-line"><span class="nf-key">Packages:</span><span
+                                        class="nf-val">152</span></div>
+                                <div class="nf-line"><span class="nf-key">Shell:</span><span class="nf-val">bash
+                                        5.1.16</span></div>
+                                <div class="nf-line"><span class="nf-key">Resolution:</span><span
+                                        class="nf-val">1920x1080</span></div>
+                                <div class="nf-line"><span class="nf-key">DE:</span><span class="nf-val">Portfolio
+                                        Desktop</span></div>
+                                <div class="nf-line"><span class="nf-key">WM:</span><span class="nf-val">Mutter
+                                        (Gnome)</span></div>
+                                <div class="nf-line"><span class="nf-key">Terminal:</span><span
+                                        class="nf-val">neofetch</span></div>
+                                <div class="nf-line"><span class="nf-key">CPU:</span><span class="nf-val">Intel
+                                        i5-11400H</span></div>
+                                <div class="nf-line"><span class="nf-key">GPU:</span><span class="nf-val">NVIDIA GTX
+                                        1650</span></div>
+                                <div class="nf-line"><span class="nf-key">Memory:</span><span class="nf-val">4032MiB /
+                                        8192MiB</span></div>
+                                <br>
+                                <div class="nf-palette">
+                                    <span class="pal-dot" style="background:#000;"></span>
+                                    <span class="pal-dot" style="background:#cc0000;"></span>
+                                    <span class="pal-dot" style="background:#4e9a06;"></span>
+                                    <span class="pal-dot" style="background:#c4a000;"></span>
+                                    <span class="pal-dot" style="background:#3465a4;"></span>
+                                    <span class="pal-dot" style="background:#75507b;"></span>
+                                    <span class="pal-dot" style="background:#06989a;"></span>
+                                    <span class="pal-dot" style="background:#d3d7cf;"></span>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- INTERACTIVE TERMINAL -->
+                        <div class="term-interactive" id="term-interactive">
+                            <div class="term-output" id="term-output"></div>
+                            <div class="term-input-row">
+                                <span class="term-prompt mono" id="term-prompt"><span
+                                        class="tp-user">hari@portfolio</span>:<span class="tp-path">~</span>$ </span>
+                                <input type="text" class="term-input mono" id="term-input" autocomplete="off"
+                                    spellcheck="false">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- ══ WINDOW: NOTES.TXT ══ -->
+                <div class="window" id="win-notes" style="left:415px;top:4px;width:350px;height:340px;">
+                    <div class="win-titlebar" onmousedown="startDrag(event,'win-notes')">
+                        <div class="win-controls">
+                            <span class="wc wc-close" onclick="closeWindow('win-notes')"></span>
+                            <span class="wc wc-min" onclick="minimizeWindow('win-notes')"></span>
+                            <span class="wc wc-max" onclick="maximizeWindow('win-notes')"></span>
+                        </div>
+                        <div class="win-menu-bar mono">
+                            <span class="win-title">Notes.txt</span>
+                            <span class="menu-item">File</span>
+                            <span class="menu-item">Edit</span>
+                            <span class="menu-item">View</span>
+                            <span class="menu-item">Help</span>
+                        </div>
+                    </div>
+                    <div class="win-body notes-body">
+                        <pre class="notes-content mono"><span class="notes-comment">// About Me</span>
+I'm Hari Muthu Ganesh,
+a passionate developer and cybersecurity enthusiast.
+I love building secure, scalable and impactful solutions.
+
+<span class="notes-comment">// Skills</span>
+<span class="notes-bullet">•</span> Languages  : Java, Python, JavaScript, SQL
+<span class="notes-bullet">•</span> Frameworks : Spring Boot, Node.js, React.js
+<span class="notes-bullet">•</span> Database   : MySQL, MongoDB
+<span class="notes-bullet">•</span> Tools      : Git, Linux, Docker, Postman
+<span class="notes-bullet">•</span> Cybersecurity : TryHackMe, HackTheBox, OSINT
+<span class="notes-bullet">•</span> Embedded &amp; Radar : TI mmwave Radar, UART, Python
+
+<span class="notes-comment">// Current Focus</span>
+<span class="notes-check done">[✓]</span> Advanced Web Development
+<span class="notes-check done">[✓]</span> Radar Signal Processing
+<span class="notes-check done">[✓]</span> Cybersecurity &amp; Pentesting
+<span class="notes-check">[  ]</span> AI &amp; Machine Learning</pre>
+                    </div>
+                </div>
+
+                <!-- ══ WINDOW: FILE MANAGER ══ -->
+                <div class="window" id="win-files" style="left:100px;top:350px;width:665px;height:230px;">
+                    <div class="win-titlebar" onmousedown="startDrag(event,'win-files')">
+                        <div class="win-controls">
+                            <span class="wc wc-close" onclick="closeWindow('win-files')"></span>
+                            <span class="wc wc-min" onclick="minimizeWindow('win-files')"></span>
+                            <span class="wc wc-max" onclick="maximizeWindow('win-files')"></span>
+                        </div>
+                        <div class="fm-titlebar-content">
+                            <div class="fm-nav-btns">
+                                <button class="fm-nav-btn" title="Back"><i
+                                        class="fa-solid fa-chevron-left"></i></button>
+                                <button class="fm-nav-btn" title="Forward"><i
+                                        class="fa-solid fa-chevron-right"></i></button>
+                            </div>
+                            <span class="win-title">Home</span>
+                            <div class="fm-search"><i class="fa-solid fa-magnifying-glass"></i></div>
+                            <div class="fm-win-controls-right">
+                                <button class="fm-nav-btn"><i class="fa-solid fa-bars"></i></button>
+                                <button class="fm-nav-btn"><i class="fa-solid fa-minus"></i></button>
+                                <button class="fm-nav-btn"><i class="fa-solid fa-square"></i></button>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="win-body fm-body">
+                        <!-- Sidebar -->
+                        <div class="fm-sidebar mono">
+                            <div class="fm-sidebar-item" onclick="fmNav('recent',this)"><i
+                                    class="fa-solid fa-clock-rotate-left"></i> Recent</div>
+                            <div class="fm-sidebar-item" onclick="fmNav('starred',this)"><i
+                                    class="fa-solid fa-star"></i> Starred</div>
+                            <div class="fm-sidebar-item active" onclick="fmNav('home',this)"><i
+                                    class="fa-solid fa-house"></i> Home</div>
+                            <div class="fm-sidebar-item" onclick="fmNav('documents',this)"><i
+                                    class="fa-solid fa-file-alt"></i> Documents</div>
+                            <div class="fm-sidebar-item" onclick="fmNav('downloads',this)"><i
+                                    class="fa-solid fa-download"></i> Downloads</div>
+                            <div class="fm-sidebar-item" onclick="fmNav('pictures',this)"><i
+                                    class="fa-solid fa-image"></i> Pictures</div>
+                            <div class="fm-sidebar-item" onclick="fmNav('videos',this)"><i
+                                    class="fa-solid fa-video"></i> Videos</div>
+                            <div class="fm-sidebar-item" onclick="fmNav('trash',this)"><i class="fa-solid fa-trash"></i>
+                                Trash</div>
+                            <div class="fm-sidebar-divider"></div>
+                            <div class="fm-sidebar-item sm"><i class="fa-solid fa-plus"></i> Other Locations</div>
+                        </div>
+                        <!-- File Grid (dynamic) -->
+                        <div class="fm-right">
+                            <div class="fm-path-bar mono" id="fm-path-bar">Home</div>
+                            <div class="fm-grid" id="fm-grid">
+                                <!-- Home view injected by JS -->
+                            </div>
+                            <div class="fm-empty hidden" id="fm-empty">
+                                <i class="fa-solid fa-folder-open fm-empty-icon"></i>
+                                <p class="mono fm-empty-msg" id="fm-empty-msg">This folder is empty</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- ══ WINDOW: ABOUT ME (opens from folder) ══ -->
+                <div class="window hidden" id="win-about" style="left:60px;top:30px;width:420px;height:350px;">
+                    <div class="win-titlebar" onmousedown="startDrag(event,'win-about')">
+                        <div class="win-controls">
+                            <span class="wc wc-close" onclick="closeWindow('win-about')"></span>
+                            <span class="wc wc-min" onclick="minimizeWindow('win-about')"></span>
+                            <span class="wc wc-max" onclick="maximizeWindow('win-about')"></span>
+                        </div>
+                        <span class="win-title mono"><i class="fa-solid fa-user" style="color:#2196f3;"></i>
+                            About_Me</span>
+                    </div>
+                    <div class="win-body app-body">
+                        <div class="app-header"><i class="fa-solid fa-user-astronaut app-header-icon"
+                                style="color:#2196f3;"></i> Hari Muthu Ganesh</div>
+                        <div class="app-content mono">
+                            <p><span class="app-label">Role:</span> Full Stack Developer | Embedded Systems Engineer |
+                                Cyber Security Enthusiast</p>
+                            <p><span class="app-label">College:</span> National Engineering College, Kovilpatti</p>
+                            <p><span class="app-label">Degree:</span> B.E. Computer Science & Engineering (2022–2026)
+                            </p>
+                            <p><span class="app-label">CGPA:</span> <span style="color:#00ff41;">8.65 / 10.0</span></p>
+                            <p><span class="app-label">Email:</span> hariganesh260@gmail.com</p>
+                            <p><span class="app-label">GitHub:</span> <a href="https://github.com/HariMuthuGanesh"
+                                    target="_blank" style="color:#58a6ff;">HariMuthuGanesh</a></p>
+                            <p><span class="app-label">LinkedIn:</span> <a
+                                    href="https://www.linkedin.com/in/hari-muthu-ganesh-r-147662321" target="_blank"
+                                    style="color:#58a6ff;">hari-muthu-ganesh-r</a></p>
+                            <br>
+                            <p style="color:#aaa;font-size:0.8rem;">I build things that matter — from radar firmware to
+                                full-stack apps to CTF exploits.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- ══ WINDOW: PROJECTS ══ -->
+                <div class="window hidden" id="win-projects" style="left:80px;top:20px;width:500px;height:400px;">
+                    <div class="win-titlebar" onmousedown="startDrag(event,'win-projects')">
+                        <div class="win-controls">
+                            <span class="wc wc-close" onclick="closeWindow('win-projects')"></span>
+                            <span class="wc wc-min" onclick="minimizeWindow('win-projects')"></span>
+                            <span class="wc wc-max" onclick="maximizeWindow('win-projects')"></span>
+                        </div>
+                        <span class="win-title mono"><i class="fa-solid fa-code" style="color:#4caf50;"></i>
+                            Projects</span>
+                    </div>
+                    <div class="win-body app-body" style="overflow-y:auto;">
+                        <div class="app-header"><i class="fa-solid fa-folder-open app-header-icon"
+                                style="color:#4caf50;"></i> Project Vault</div>
+                        <div class="project-list">
+                            <div class="proj-item">
+                                <div class="proj-header">
+                                    <span class="proj-title">Vigil Sense</span>
+                                    <span class="proj-badge tracking">TRACKING</span>
+                                </div>
+                                <p class="proj-desc mono">PyQt5 app powered by TI IWR6843AOP mmWave radar for people
+                                    tracking & fall detection.</p>
+                                <div class="proj-tags mono">
+                                    <span class="ptag">Python</span><span class="ptag">PyQt5</span><span
+                                        class="ptag">mmWave</span>
+                                </div>
+                                <a href="https://github.com/HariMuthuGanesh/Vigle_Sense" target="_blank"
+                                    class="proj-link mono"><i class="fa-brands fa-github"></i> Source</a>
+                            </div>
+                            <div class="proj-item">
+                                <div class="proj-header">
+                                    <span class="proj-title">NEC CBCS</span>
+                                    <span class="proj-badge active">ACTIVE</span>
+                                </div>
+                                <p class="proj-desc mono">Choice-Based Credit System elective allocation portal for
+                                    National Engineering College.</p>
+                                <div class="proj-tags mono">
+                                    <span class="ptag">React</span><span class="ptag">Node.js</span><span
+                                        class="ptag">MongoDB</span>
+                                </div>
+                            </div>
+                            <div class="proj-item">
+                                <div class="proj-header">
+                                    <span class="proj-title">PaperHub</span>
+                                    <span class="proj-badge deployed">DEPLOYED</span>
+                                </div>
+                                <p class="proj-desc mono">n8n automation bot on Hugging Face + Supabase for retrieving
+                                    question papers via Telegram.</p>
+                                <div class="proj-tags mono">
+                                    <span class="ptag">n8n</span><span class="ptag">Supabase</span><span
+                                        class="ptag">Telegram</span>
+                                </div>
+                            </div>
+                            <div class="proj-item">
+                                <div class="proj-header">
+                                    <span class="proj-title">CodeVerse</span>
+                                    <span class="proj-badge deployed">DEPLOYED</span>
+                                </div>
+                                <p class="proj-desc mono">Web platform for coding events, quizzes, and data-structure
+                                    challenges.</p>
+                                <div class="proj-tags mono">
+                                    <span class="ptag">Node.js</span><span class="ptag">Express</span><span
+                                        class="ptag">HTML/CSS/JS</span>
+                                </div>
+                                <a href="https://github.com/HariMuthuGanesh/CodeVerse" target="_blank"
+                                    class="proj-link mono"><i class="fa-brands fa-github"></i> Source</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- ══ WINDOW: CYBER LAB ══ -->
+                <div class="window hidden" id="win-cyber" style="left:90px;top:30px;width:440px;height:360px;">
+                    <div class="win-titlebar" onmousedown="startDrag(event,'win-cyber')">
+                        <div class="win-controls">
+                            <span class="wc wc-close" onclick="closeWindow('win-cyber')"></span>
+                            <span class="wc wc-min" onclick="minimizeWindow('win-cyber')"></span>
+                            <span class="wc wc-max" onclick="maximizeWindow('win-cyber')"></span>
+                        </div>
+                        <span class="win-title mono"><i class="fa-solid fa-shield-halved" style="color:#c62828;"></i>
+                            Cyber_Lab</span>
+                    </div>
+                    <div class="win-body app-body" style="overflow-y:auto;">
+                        <div class="app-header" style="color:#e57373;"><i
+                                class="fa-solid fa-bug-slash app-header-icon"></i> Security Operations</div>
+                        <div class="app-content mono">
+                            <div class="cyber-stat-grid">
+                                <div class="cyber-stat"><span class="cstat-label">Platform</span><span class="cstat-val"
+                                        style="color:#00ff41;">Hack The Box</span></div>
+                                <div class="cyber-stat"><span class="cstat-label">Platform</span><span class="cstat-val"
+                                        style="color:#00ff41;">TryHackMe</span></div>
+                                <div class="cyber-stat"><span class="cstat-label">CTFs Solved</span><span
+                                        class="cstat-val" style="color:#ffbf00;">12+</span></div>
+                                <div class="cyber-stat"><span class="cstat-label">Rank (THM)</span><span
+                                        class="cstat-val" style="color:#4f80ff;">Top 10%</span></div>
+                            </div>
+                            <br>
+                            <p><span style="color:#e57373;">SKILLS:</span></p>
+                            <p>> Penetration Testing</p>
+                            <p>> OSINT &amp; Recon</p>
+                            <p>> Network Security</p>
+                            <p>> Web Exploitation</p>
+                            <p>> Reverse Engineering</p>
+                            <p>> Digital Forensics</p>
+                            <br>
+                            <p style="color:#00ff41;">✓ No Critical Vulnerabilities Found</p>
+                            <p style="color:#00ff41;">✓ System Secure</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- ══ WINDOW: WEB DEV ══ -->
+                <div class="window hidden" id="win-webdev" style="left:100px;top:40px;width:440px;height:340px;">
+                    <div class="win-titlebar" onmousedown="startDrag(event,'win-webdev')">
+                        <div class="win-controls">
+                            <span class="wc wc-close" onclick="closeWindow('win-webdev')"></span>
+                            <span class="wc wc-min" onclick="minimizeWindow('win-webdev')"></span>
+                            <span class="wc wc-max" onclick="maximizeWindow('win-webdev')"></span>
+                        </div>
+                        <span class="win-title mono"><i class="fa-solid fa-globe" style="color:#1976d2;"></i>
+                            Web_Dev</span>
+                    </div>
+                    <div class="win-body app-body">
+                        <div class="app-header" style="color:#64b5f6;"><i
+                                class="fa-solid fa-layer-group app-header-icon"></i> Software Engineering Stack</div>
+                        <div class="tech-stack-grid">
+                            <div class="ts-cat">
+                                <div class="ts-cat-title" style="color:#4f80ff;">Frontend</div>
+                                <div class="ts-items mono">
+                                    <span class="ts-item"><i class="fa-brands fa-react" style="color:#61DAFB;"></i>
+                                        React</span>
+                                    <span class="ts-item"><i class="fa-brands fa-js" style="color:#F7DF1E;"></i>
+                                        JavaScript</span>
+                                    <span class="ts-item"><i class="fa-brands fa-html5" style="color:#E34F26;"></i>
+                                        HTML5</span>
+                                    <span class="ts-item"><i class="fa-brands fa-css3-alt" style="color:#1572B6;"></i>
+                                        CSS3</span>
+                                </div>
+                            </div>
+                            <div class="ts-cat">
+                                <div class="ts-cat-title" style="color:#4caf50;">Backend</div>
+                                <div class="ts-items mono">
+                                    <span class="ts-item"><i class="fa-brands fa-java" style="color:#ED8B00;"></i>
+                                        Java</span>
+                                    <span class="ts-item"><i class="fa-solid fa-leaf" style="color:#6DB33F;"></i> Spring
+                                        Boot</span>
+                                    <span class="ts-item"><i class="fa-brands fa-node-js" style="color:#339933;"></i>
+                                        Node.js</span>
+                                    <span class="ts-item"><i class="fa-brands fa-python" style="color:#3776AB;"></i>
+                                        Python</span>
+                                </div>
+                            </div>
+                            <div class="ts-cat">
+                                <div class="ts-cat-title" style="color:#ffbf00;">Database</div>
+                                <div class="ts-items mono">
+                                    <span class="ts-item"><i class="fa-solid fa-database" style="color:#4DB33D;"></i>
+                                        MongoDB</span>
+                                    <span class="ts-item"><i class="fa-solid fa-table" style="color:#4479A1;"></i>
+                                        MySQL</span>
+                                </div>
+                            </div>
+                            <div class="ts-cat">
+                                <div class="ts-cat-title" style="color:#a855f7;">Tools</div>
+                                <div class="ts-items mono">
+                                    <span class="ts-item"><i class="fa-brands fa-git-alt" style="color:#F05032;"></i>
+                                        Git</span>
+                                    <span class="ts-item"><i class="fa-brands fa-linux" style="color:#FCC624;"></i>
+                                        Linux</span>
+                                    <span class="ts-item"><i class="fa-brands fa-docker" style="color:#2496ED;"></i>
+                                        Docker</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- ══ WINDOW: RADAR LAB ══ -->
+                <div class="window hidden" id="win-radar" style="left:80px;top:20px;width:460px;height:360px;">
+                    <div class="win-titlebar" onmousedown="startDrag(event,'win-radar')">
+                        <div class="win-controls">
+                            <span class="wc wc-close" onclick="closeWindow('win-radar')"></span>
+                            <span class="wc wc-min" onclick="minimizeWindow('win-radar')"></span>
+                            <span class="wc wc-max" onclick="maximizeWindow('win-radar')"></span>
+                        </div>
+                        <span class="win-title mono"><i class="fa-solid fa-satellite-dish" style="color:#388e3c;"></i>
+                            Radar_Lab</span>
+                    </div>
+                    <div class="win-body app-body" style="overflow-y:auto;">
+                        <div class="app-header" style="color:#81c784;"><i
+                                class="fa-solid fa-satellite-dish app-header-icon"></i> Radar_Lab — Internship</div>
+                        <div class="app-content mono">
+
+                            <!-- Internship Badge -->
+                            <div class="intern-badge">
+                                <div class="intern-badge-left">
+                                    <div class="intern-role">mmWave Radar Intern</div>
+                                    <div class="intern-company"><i class="fa-solid fa-building"
+                                            style="color:#81c784; margin-right:6px;"></i>Mistral Solutions Pvt. Ltd.
+                                    </div>
+                                    <div class="intern-period"><i class="fa-solid fa-calendar"
+                                            style="color:#555; margin-right:6px;"></i>Jun 2025 — Present</div>
+                                </div>
+                                <span class="intern-status-badge">ACTIVE</span>
+                            </div>
+
+                            <!-- Hardware -->
+                            <p style="color:#388e3c; margin-top:12px; margin-bottom:6px;">HARDWARE &amp; TOOLS:</p>
+                            <p><span class="app-label">Radar:</span> TI IWR6843AOP mmWave Radar</p>
+                            <p><span class="app-label">Interface:</span> UART / Serial Communication</p>
+                            <p><span class="app-label">Parsing:</span> TLV Frame Analysis</p>
+                            <p><span class="app-label">Language:</span> Python 3</p>
+
+                            <!-- What I Did -->
+                            <p style="color:#388e3c; margin-top:12px; margin-bottom:6px;">INTERNSHIP WORK:</p>
+                            <p>> Configured TI IWR6843AOP firmware &amp; flashed mmWave SDK profiles</p>
+                            <p>> Developed Python utilities to capture &amp; parse UART data streams</p>
+                            <p>> Decoded TLV (Type-Length-Value) radar frames into structured point cloud data</p>
+                            <p>> Built real-time people tracking &amp; fall detection pipeline</p>
+                            <p>> Contributed to <span style="color:#00ff41;">Vigil Sense</span> — industrial safety
+                                monitoring app (PyQt5)</p>
+                            <p>> Validated sensor accuracy in controlled test environments</p>
+
+                            <!-- Mini Radar -->
+                            <div class="radar-mini-display">
+                                <canvas id="radar-mini-canvas" width="160" height="160"></canvas>
+                                <div class="radar-status mono">
+                                    <p><span style="color:#00ff41;">●</span> SCANNING</p>
+                                    <p>Range: 0–6 m</p>
+                                    <p>Targets: <span id="radar-targets">4</span></p>
+                                    <p style="color:#555; margin-top:6px; font-size:0.65rem;">TI IWR6843AOP</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- ══ WINDOW: CONTACT ══ -->
+                <div class="window hidden" id="win-contact" style="left:120px;top:40px;width:380px;height:340px;">
+                    <div class="win-titlebar" onmousedown="startDrag(event,'win-contact')">
+                        <div class="win-controls">
+                            <span class="wc wc-close" onclick="closeWindow('win-contact')"></span>
+                            <span class="wc wc-min" onclick="minimizeWindow('win-contact')"></span>
+                            <span class="wc wc-max" onclick="maximizeWindow('win-contact')"></span>
+                        </div>
+                        <span class="win-title mono"><i class="fa-solid fa-envelope" style="color:#4f80ff;"></i>
+                            Contact_Me</span>
+                    </div>
+                    <div class="win-body app-body">
+                        <div class="app-header"><i class="fa-solid fa-satellite-dish app-header-icon"
+                                style="color:#4f80ff;"></i> Secure Comm Channel</div>
+                        <div class="contact-links-os">
+                            <a href="mailto:hariganesh260@gmail.com" class="contact-link-os mono">
+                                <i class="fa-solid fa-envelope" style="color:#ea4335;"></i>
+                                <span>hariganesh260@gmail.com</span>
+                            </a>
+                            <a href="https://github.com/HariMuthuGanesh" target="_blank" class="contact-link-os mono">
+                                <i class="fa-brands fa-github" style="color:#fff;"></i>
+                                <span>github.com/HariMuthuGanesh</span>
+                            </a>
+                            <a href="https://www.linkedin.com/in/hari-muthu-ganesh-r-147662321" target="_blank"
+                                class="contact-link-os mono">
+                                <i class="fa-brands fa-linkedin" style="color:#0a66c2;"></i>
+                                <span>linkedin.com/in/hari-muthu-ganesh</span>
+                            </a>
+                            <a href="assets/resume.pdf" download class="contact-link-os mono">
+                                <i class="fa-solid fa-file-pdf" style="color:#e53935;"></i>
+                                <span>Download Resume.pdf</span>
+                            </a>
+                        </div>
+                        <div class="contact-form-os">
+                            <p class="mono" style="color:#666; font-size:0.75rem; margin-bottom:10px;">> Send a message:
+                            </p>
+                            <form action="https://formsubmit.co/3e64eccf7deb7471c0c84a5e7878bdb8" method="POST">
+                                <input type="hidden" name="_subject" value="Portfolio Contact">
+                                <input type="text" name="name" class="os-input mono" placeholder="Name" required>
+                                <input type="email" name="email" class="os-input mono" placeholder="Email" required>
+                                <textarea name="message" class="os-input mono" rows="3" placeholder="Message"
+                                    required></textarea>
+                                <button type="submit" class="os-submit-btn mono"><i class="fa-solid fa-paper-plane"></i>
+                                    Send</button>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- ══ WINDOW: TRASH ══ -->
+                <div class="window hidden" id="win-trash" style="left:200px;top:100px;width:320px;height:200px;">
+                    <div class="win-titlebar" onmousedown="startDrag(event,'win-trash')">
+                        <div class="win-controls">
+                            <span class="wc wc-close" onclick="closeWindow('win-trash')"></span>
+                            <span class="wc wc-min" onclick="minimizeWindow('win-trash')"></span>
+                            <span class="wc wc-max" onclick="maximizeWindow('win-trash')"></span>
+                        </div>
+                        <span class="win-title mono"><i class="fa-solid fa-trash" style="color:#666;"></i> Trash</span>
+                    </div>
+                    <div class="win-body app-body" style="display:flex;align-items:center;justify-content:center;">
+                        <div style="text-align:center; color:#444;" class="mono">
+                            <i class="fa-solid fa-trash"
+                                style="font-size:2.5rem; margin-bottom:10px; display:block;"></i>
+                            Trash is empty
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+            <!-- END DESKTOP -->
+
+            <!-- RIGHT WIDGET PANEL -->
+            <div id="right-panel">
+                <!-- Clock -->
+                <div class="widget clock-widget">
+                    <div class="clock-time mono" id="clock-time">12:45:30</div>
+                    <div class="clock-date mono" id="clock-date">Saturday | 24 May 2025</div>
+                </div>
+
+                <!-- System Monitor -->
+                <div class="widget sysmon-widget">
+                    <div class="widget-title mono">SYSTEM MONITOR</div>
+                    <div class="sysmon-row">
+                        <div class="sysmon-label mono">CPU Usage</div>
+                        <div class="sysmon-bar-wrap">
+                            <div class="sysmon-bar" id="cpu-bar" style="width:23%;"></div>
+                        </div>
+                        <div class="sysmon-val mono" id="cpu-val">23%</div>
+                    </div>
+                    <div class="sysmon-row">
+                        <div class="sysmon-label mono">RAM Usage</div>
+                        <div class="sysmon-bar-wrap">
+                            <div class="sysmon-bar" id="ram-bar" style="width:41%;"></div>
+                        </div>
+                        <div class="sysmon-val mono" id="ram-val">41%</div>
+                    </div>
+                    <div class="sysmon-row">
+                        <div class="sysmon-label mono">Disk Usage</div>
+                        <div class="sysmon-bar-wrap">
+                            <div class="sysmon-bar" id="disk-bar" style="width:57%;"></div>
+                        </div>
+                        <div class="sysmon-val mono" id="disk-val">57%</div>
+                    </div>
+                    <div class="sysmon-network mono">
+                        <span>Network</span>
+                        <div>
+                            <span id="net-down">↓ 1.2 KB/s</span>
+                            <span id="net-up">↑ 2.4 KB/s</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Shortcuts -->
+                <div class="widget shortcuts-widget">
+                    <div class="widget-title mono">SHORTCUTS</div>
+                    <div class="shortcut-item mono" onclick="openWindow('terminal')"><span>&gt;</span> Open Terminal
+                    </div>
+                    <div class="shortcut-item mono" onclick="openWindow('projects')"><span>&gt;</span> View Projects
+                    </div>
+                    <div class="shortcut-item mono" onclick="openWindow('cyber')"><span>&gt;</span> Cyber Lab</div>
+                    <div class="shortcut-item mono" onclick="openWindow('radar')"><span>&gt;</span> Radar Lab</div>
+                    <div class="shortcut-item mono" onclick="openWindow('contact')"><span>&gt;</span> Contact Me</div>
+                </div>
+
+                <!-- Status -->
+                <div class="widget status-widget">
+                    <div class="widget-title mono">STATUS</div>
+                    <div class="status-item">
+                        <i class="fa-solid fa-shield-halved status-icon ok"></i>
+                        <div class="mono">
+                            <div class="status-label">System Secure</div>
+                            <div class="status-sub">All Systems Operational</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+        <!-- END WORKSPACE -->
+
+        <!-- BOTTOM TASKBAR -->
+        <div id="bottombar">
+            <div class="taskbar-apps">
+                <div class="taskbar-item active" onclick="openWindow('terminal')" title="Terminal">
+                    <i class="fa-solid fa-terminal"></i>
+                </div>
+                <div class="taskbar-item" onclick="openWindow('notes')" title="Notes">
+                    <i class="fa-solid fa-file-lines"></i>
+                </div>
+                <div class="taskbar-item" onclick="openWindow('webdev')" title="VS Code">
+                    <i class="fa-solid fa-code" style="color:#007acc;"></i>
+                </div>
+                <div class="taskbar-item" onclick="openWindow('cyber')" title="Firefox">
+                    <i class="fa-brands fa-firefox-browser" style="color:#ff7139;"></i>
+                </div>
+                <div class="taskbar-item" onclick="openWindow('files')" title="Files">
+                    <i class="fa-solid fa-folder-open" style="color:#ffbf00;"></i>
+                </div>
+                <div class="taskbar-separator"></div>
+                <div class="taskbar-item" id="apps-grid-btn" onclick="toggleAppGrid()" title="All Apps">
+                    <i class="fa-solid fa-grid-2"></i>
+                </div>
+            </div>
+        </div>
+
+        <!-- App Grid Overlay -->
+        <div id="app-grid-overlay" class="hidden">
+            <div class="app-grid-content">
+                <input type="text" class="app-search mono" placeholder="Search apps..." id="app-search">
+                <div class="app-grid-icons">
+                    <div class="agrid-item" onclick="openWindow('terminal');toggleAppGrid()"><i
+                            class="fa-solid fa-terminal"></i><span>Terminal</span></div>
+                    <div class="agrid-item" onclick="openWindow('about');toggleAppGrid()"><i class="fa-solid fa-user"
+                            style="color:#2196f3;"></i><span>About Me</span></div>
+                    <div class="agrid-item" onclick="openWindow('projects');toggleAppGrid()"><i class="fa-solid fa-code"
+                            style="color:#4caf50;"></i><span>Projects</span></div>
+                    <div class="agrid-item" onclick="openWindow('cyber');toggleAppGrid()"><i
+                            class="fa-solid fa-shield-halved" style="color:#c62828;"></i><span>Cyber Lab</span></div>
+                    <div class="agrid-item" onclick="openWindow('webdev');toggleAppGrid()"><i class="fa-solid fa-globe"
+                            style="color:#1976d2;"></i><span>Web Dev</span></div>
+                    <div class="agrid-item" onclick="openWindow('radar');toggleAppGrid()"><i
+                            class="fa-solid fa-satellite-dish" style="color:#388e3c;"></i><span>Radar Lab</span></div>
+                    <div class="agrid-item" onclick="openWindow('notes');toggleAppGrid()"><i
+                            class="fa-solid fa-file-lines"></i><span>Notes.txt</span></div>
+                    <div class="agrid-item" onclick="openWindow('contact');toggleAppGrid()"><i
+                            class="fa-solid fa-envelope" style="color:#4f80ff;"></i><span>Contact</span></div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+    <!-- END #os -->
+
+    <script src="js/main.js"></script>
+</body>
+
+</html>
