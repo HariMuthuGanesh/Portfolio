@@ -448,7 +448,11 @@ const FS = {
                     'vigil_sense.txt': { type: 'file', content: 'Vigil Sense — PyQt5 + TI IWR6843AOP mmWave Radar\nPeople tracking, fall detection, restricted zone breach alerts.\nTech: Python, PyQt5, UART, TLV Parsing' },
                     'nec_cbcs.txt': { type: 'file', content: 'NEC CBCS — Choice-Based Credit System Portal\nElective allocation and registration for National Engineering College.\nTech: React, Node.js, Express, MongoDB' },
                     'paperhub.txt': { type: 'file', content: 'PaperHub — n8n Automation Telegram Bot\nQuestion paper retrieval bot for NEC students.\nTech: n8n, Supabase, PostgreSQL, Hugging Face' },
-                    'codeverse.txt': { type: 'file', content: 'CodeVerse — Coding Events Platform\nQuizzes, coding challenges, and leaderboard.\nTech: HTML/CSS/JS, Node.js, Express' }
+                    'codeverse.txt': { type: 'file', content: 'CodeVerse — Coding Events Platform\nQuizzes, coding challenges, and leaderboard.\nTech: HTML/CSS/JS, Node.js, Express\nDemo: https://codeverse-ymd8.onrender.com/' },
+                    'least_laxity_first.txt': { type: 'file', content: 'Least Laxity First — OS CPU Scheduling GUI\nVisual animated Gantt chart for scheduling simulation.\nTech: Python, Tkinter' },
+                    'club_management.txt': { type: 'file', content: 'Club Management System — Academic Project\nFull-stack college club registry app.\nTech: Spring Boot, JWT, MySQL, HTML/JS' },
+                    'image_encryption.txt': { type: 'file', content: 'Image Encryption & Decryption — Cryptography GUI\nTool to encrypt/decrypt images using a custom security key.\nTech: Python, Tkinter' },
+                    'password_analyser.txt': { type: 'file', content: 'Password Complexity Analyser — Security Tool\nEvaluates password strength & entropy with recommendations.\nTech: Python, Tkinter' }
                 }
             },
             'skills': {
@@ -460,7 +464,7 @@ const FS = {
                     'embedded.txt': { type: 'file', content: 'Hardware: TI IWR6843AOP mmWave Radar\nProtocol: UART, Serial Comm\nParsing: TLV Frame Analysis' }
                 }
             },
-            'about.txt': { type: 'file', content: 'Hari Muthu Ganesh R\n3rd-year CSE student, National Engineering College, Kovilpatti\nCGPA: 8.71/10.0\n\nFull Stack Dev | Embedded Systems Eng | Cyber Security Enthusiast | CTF Player\n\nhariganesh260@gmail.com\ngithub.com/HariMuthuGanesh' },
+            'about.txt': { type: 'file', content: 'Hari Muthu Ganesh R\n3rd-year CSE student, National Engineering College, Kovilpatti\nCGPA: 8.65/10.0\n\nFull Stack Dev | Embedded Systems Eng | Cyber Security Enthusiast | CTF Player\n\nhariganesh260@gmail.com\ngithub.com/HariMuthuGanesh' },
             'readme.txt': { type: 'file', content: 'HMGOS v2.0 — Portfolio Terminal\n\nType help for available commands.\nThis is a simulated terminal environment.\n\nWelcome to my engineering portfolio!' }
         }
     }
