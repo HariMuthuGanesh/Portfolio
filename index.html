@@ -2,10 +2,256 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta http-equiv="refresh" content="0; url=v2/">
-    <title>Hari Muthu Ganesh - Portfolio</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hari Muthu Ganesh — Portal Gateway</title>
+    <meta name="description" content="Select your experience: Hari Muthu Ganesh's Professional Portfolio or the HMGOS Desktop Simulation.">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;700&family=Outfit:wght@300;400;600;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        :root {
+            --bg-color: #050508;
+            --card-v1-accent: #007acc;
+            --card-v2-accent: #00ff41;
+            --text-primary: #ffffff;
+            --text-secondary: #8a8f98;
+            --font-display: 'Outfit', sans-serif;
+            --font-mono: 'JetBrains Mono', monospace;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            background-color: var(--bg-color);
+            color: var(--text-primary);
+            font-family: var(--font-display);
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            overflow: hidden;
+            position: relative;
+            padding: 20px;
+        }
+
+        /* Ambient background glow */
+        .glow-bg {
+            position: absolute;
+            width: 600px;
+            height: 600px;
+            border-radius: 50%;
+            background: radial-gradient(circle, rgba(0, 122, 204, 0.1) 0%, rgba(0, 255, 65, 0.05) 50%, transparent 100%);
+            filter: blur(80px);
+            z-index: 1;
+            pointer-events: none;
+        }
+
+        .header {
+            text-align: center;
+            margin-bottom: 50px;
+            z-index: 10;
+        }
+
+        .header h1 {
+            font-size: 2.5rem;
+            font-weight: 800;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            background: linear-gradient(135deg, #ffffff 40%, #8a8f98 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            margin-bottom: 10px;
+        }
+
+        .header p {
+            font-family: var(--font-mono);
+            font-size: 0.9rem;
+            color: var(--text-secondary);
+            letter-spacing: 1px;
+        }
+
+        .portal-container {
+            display: flex;
+            gap: 30px;
+            max-width: 900px;
+            width: 100%;
+            justify-content: center;
+            z-index: 10;
+        }
+
+        .portal-card {
+            flex: 1;
+            max-width: 400px;
+            background: rgba(255, 255, 255, 0.02);
+            border: 1px solid rgba(255, 255, 255, 0.08);
+            border-radius: 16px;
+            padding: 40px 30px;
+            text-align: center;
+            text-decoration: none;
+            color: var(--text-primary);
+            transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+            backdrop-filter: blur(10px);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        /* Glow effects on hover */
+        .portal-card::before {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background: radial-gradient(circle at center, rgba(255,255,255,0.03) 0%, transparent 70%);
+            opacity: 0;
+            transition: opacity 0.4s ease;
+        }
+
+        .portal-card:hover::before {
+            opacity: 1;
+        }
+
+        .portal-card.v1:hover {
+            border-color: var(--card-v1-accent);
+            box-shadow: 0 10px 40px rgba(0, 122, 204, 0.15), 0 0 0 1px rgba(0, 122, 204, 0.2);
+            transform: translateY(-8px);
+        }
+
+        .portal-card.v2:hover {
+            border-color: var(--card-v2-accent);
+            box-shadow: 0 10px 40px rgba(0, 255, 65, 0.15), 0 0 0 1px rgba(0, 255, 65, 0.2);
+            transform: translateY(-8px);
+        }
+
+        .card-icon {
+            font-size: 3.5rem;
+            margin-bottom: 25px;
+            transition: transform 0.4s ease;
+        }
+
+        .v1 .card-icon {
+            color: var(--card-v1-accent);
+            text-shadow: 0 0 20px rgba(0, 122, 204, 0.3);
+        }
+
+        .v2 .card-icon {
+            color: var(--card-v2-accent);
+            text-shadow: 0 0 20px rgba(0, 255, 65, 0.3);
+        }
+
+        .portal-card:hover .card-icon {
+            transform: scale(1.1);
+        }
+
+        .card-title {
+            font-size: 1.5rem;
+            font-weight: 600;
+            margin-bottom: 12px;
+        }
+
+        .card-description {
+            font-size: 0.9rem;
+            color: var(--text-secondary);
+            line-height: 1.6;
+            margin-bottom: 30px;
+            flex-grow: 1;
+        }
+
+        .enter-btn {
+            font-family: var(--font-mono);
+            font-size: 0.8rem;
+            font-weight: 500;
+            padding: 10px 24px;
+            border-radius: 30px;
+            background: rgba(255, 255, 255, 0.05);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            letter-spacing: 1.5px;
+            text-transform: uppercase;
+            transition: all 0.3s ease;
+        }
+
+        .v1:hover .enter-btn {
+            background: var(--card-v1-accent);
+            border-color: var(--card-v1-accent);
+            color: #fff;
+            box-shadow: 0 4px 15px rgba(0, 122, 204, 0.4);
+        }
+
+        .v2:hover .enter-btn {
+            background: var(--card-v2-accent);
+            border-color: var(--card-v2-accent);
+            color: #000;
+            box-shadow: 0 4px 15px rgba(0, 255, 65, 0.4);
+        }
+
+        .footer {
+            margin-top: 60px;
+            font-family: var(--font-mono);
+            font-size: 0.75rem;
+            color: rgba(255, 255, 255, 0.3);
+            z-index: 10;
+        }
+
+        @media (max-width: 600px) {
+            .portal-container {
+                flex-direction: column;
+                align-items: center;
+                gap: 20px;
+            }
+            .portal-card {
+                width: 100%;
+            }
+            .header h1 {
+                font-size: 2rem;
+            }
+        }
+    </style>
 </head>
 <body>
-    <p>Redirecting to <a href="v2/">portfolio</a>...</p>
+
+    <div class="glow-bg"></div>
+
+    <div class="header">
+        <h1>Hari Muthu Ganesh</h1>
+        <p>SELECT ENTRY INTERFACE</p>
+    </div>
+
+    <div class="portal-container">
+        <!-- Professional Portfolio v1 -->
+        <a href="v1/" class="portal-card v1">
+            <div class="card-icon">
+                <i class="fa-solid fa-briefcase"></i>
+            </div>
+            <div class="card-title">Professional Mode</div>
+            <div class="card-description">
+                A sleek, highly organized showcase of skills, projects, and work experience tailored for recruiters and corporate reviews.
+            </div>
+            <div class="enter-btn">Launch Suite</div>
+        </a>
+
+        <!-- HMGOS Simulation Desktop v2 -->
+        <a href="v2/" class="portal-card v2">
+            <div class="card-icon">
+                <i class="fa-solid fa-terminal"></i>
+            </div>
+            <div class="card-title">HMGOS Desktop</div>
+            <div class="card-description">
+                An interactive Linux OS simulation featuring a live terminal, interactive widgets, mmWave Radar console, and gamified apps.
+            </div>
+            <div class="enter-btn">Initiate Boot</div>
+        </a>
+    </div>
+
+    <div class="footer">
+        HMG-PORTAL // VER 2.5
+    </div>
+
 </body>
 </html>
